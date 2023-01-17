@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const userRouter = require('./Routes/userRoutes');
 const sareeRouter = require('./Routes/sareeRoutes');
+const mensRouter = require('./Routes/mensRoutes');
 
 dotenv.config({ path: './config.env' });
 
@@ -16,6 +17,7 @@ app.use(cors({
 
 app.use('/', userRouter);
 app.use('/sarees', sareeRouter);
+app.use('/mens', mensRouter);
 
 mongoose.set("strictQuery", false);
 
