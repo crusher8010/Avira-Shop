@@ -2,7 +2,61 @@ const Mens = require('../model/mensModel');
 
 exports.getAllProducts = async (req, res) => {
     try {
-        const products = await Mens.find();
+
+        let queryObj = { ...req.query };
+        const excludefields = ['page', 'sort', 'fields'];
+        excludefields.forEach(el => delete queryObj[el])
+
+        // Filtering Operations
+        let query;
+        if (queryObj.brand != undefined && queryObj.price != undefined) {
+
+            let temp = queryObj.brand;
+            delete queryObj.brand;
+
+            let obj = { price: { $lt: queryObj.price } }
+            delete queryObj.price;
+
+            console.log(queryObj)
+
+            query = Mens.find({ $and: [{ brand: { $regex: `${temp}`, $options: 'i' } }, queryObj, obj] })
+
+        } else if (queryObj.brand != undefined && queryObj.price == undefined) {
+
+            let temp = queryObj.brand;
+            delete queryObj.brand;
+
+            query = Mens.find({ $and: [{ brand: { $regex: `${temp}`, $options: 'i' } }, queryObj] })
+
+        } else if (queryObj.brand == undefined && queryObj.price != undefined) {
+
+            let obj = { price: { $lt: queryObj.price } }
+            delete queryObj.price;
+
+            query = Mens.find({ $and: [queryObj, obj] })
+
+        } else {
+
+            query = Mens.find(queryObj);
+        }
+
+        // Sorting Operations
+
+        if (req.query.sort) {
+            const sortBy = req.query.sort.split(',').join(' ');
+            query = query.sort(sortBy);
+        }
+
+        // Field Limiting Operation
+        if (req.query.fields) {
+            const fields = req.query.fields.split(',').join(' ');
+            query = query.select(fields)
+        } else {
+            query = query.select('-__v')
+        }
+
+
+        const products = await query;
 
         res.status(200).json({
             status: "success",
