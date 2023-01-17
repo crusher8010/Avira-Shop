@@ -1,5 +1,9 @@
 .main-navbar {
   width: 100%;
   height: auto;
-  /* border: 1px solid red; */
+  position: fixed;
+  z-index: 100;
+  margin-top: -135px;
+  background-color: #fff;
+  border: 1px solid red;
 }
