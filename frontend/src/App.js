@@ -1,10 +1,10 @@
 import "./App.css";
-import Navbar from "./Components/Sudev/WholeNavbar/MainNavbar/Navbar";
+import Homepage from "./Components/Sudev/WholeHomepage/Homepage/Homepage";
 
 function App() {
   return (
     <>
-      <Navbar />
+      <Homepage />
     </>
   );
 }
