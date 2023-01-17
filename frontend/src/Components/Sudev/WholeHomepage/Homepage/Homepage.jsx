@@ -12,6 +12,7 @@ const Homepage = () => {
           alt=""
         />
       </div>
+      <div>Meeso</div>
     </>
   );
 };
