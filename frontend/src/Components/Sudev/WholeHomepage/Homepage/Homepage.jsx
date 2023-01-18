@@ -7,12 +7,9 @@ const Homepage = () => {
     <>
       <Navbar />
       <div className="homepage_main">
-        <img
-          src="https://images.meesho.com/images/marketing/1631722939962.webp"
-          alt=""
-        />
+        
       </div>
-      <div>Meeso</div>
+
     </>
   );
 };
