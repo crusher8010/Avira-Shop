@@ -7,7 +7,7 @@ import {
   MenuItem,
   MenuDivider,
   MenuGroup,
-  useDisclosure,
+  // useDisclosure,
 } from "@chakra-ui/react";
 
 const LowerNavbar = () => {
@@ -21,7 +21,7 @@ const LowerNavbar = () => {
   const [bagFootwears, setBagFootwears] = useState(false);
   const [electronics, setElectronics] = useState(false);
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  // const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
@@ -36,7 +36,11 @@ const LowerNavbar = () => {
             </MenuButton>
 
             <MenuList marginTop="4px">
-              <div className="xyz">
+              <div
+                className="xyz"
+                onMouseEnter={() => setWomenEthinic(true)}
+                onMouseLeave={() => setWomenEthinic(false)}
+              >
                 <MenuGroup title="All Women Ethinic" color="#da60b0">
                   <MenuItem fontSize={13} marginLeft={1} color="grey">
                     View All
@@ -151,7 +155,11 @@ const LowerNavbar = () => {
               <p className="lower_nav_bar_divs_para">Women Wester</p>
             </MenuButton>
             <MenuList marginTop="4px">
-              <div className="xyz">
+              <div
+                className="xyz"
+                onMouseEnter={() => setWomenWester(true)}
+                onMouseLeave={() => setWomenWester(false)}
+              >
                 <MenuGroup title="Topwear" color="#da60b0">
                   <MenuItem fontSize={13} marginLeft={1} color="grey">
                     Tops
@@ -218,7 +226,11 @@ const LowerNavbar = () => {
               <p className="lower_nav_bar_divs_para">Men</p>
             </MenuButton>
             <MenuList marginTop="4px">
-              <div className="xyz">
+              <div
+                className="xyz"
+                onMouseEnter={() => setMen(true)}
+                onMouseLeave={() => setMen(false)}
+              >
                 <MenuGroup title="Top Wear" color="#da60b0">
                   <MenuItem fontSize={13} marginLeft={1} color="grey">
                     All Top Wear
@@ -323,7 +335,11 @@ const LowerNavbar = () => {
               <p className="lower_nav_bar_divs_para">Kids</p>
             </MenuButton>
             <MenuList marginTop="4px">
-              <div className="xyz">
+              <div
+                className="xyz"
+                onMouseEnter={() => setKids(true)}
+                onMouseLeave={() => setKids(false)}
+              >
                 <MenuGroup title="Boys & Girls 2+ Year" color="#da60b0">
                   <MenuItem fontSize={13} marginLeft={1} color="grey">
                     Dresses
@@ -375,7 +391,11 @@ const LowerNavbar = () => {
               <p className="lower_nav_bar_divs_para">Home & Kitchen</p>
             </MenuButton>
             <MenuList marginTop="4px">
-              <div className="xyz">
+              <div
+                className="xyz"
+                onMouseEnter={() => setHomeKitchen(true)}
+                onMouseLeave={() => setHomeKitchen(false)}
+              >
                 <MenuGroup title="Home Furnishing" color="#da60b0">
                   <MenuItem fontSize={13} marginLeft={1} color="grey">
                     Bedsheets
@@ -432,7 +452,11 @@ const LowerNavbar = () => {
               <p className="lower_nav_bar_divs_para">Beauty & Health</p>
             </MenuButton>
             <MenuList marginTop="4px">
-              <div className="xyz">
+              <div
+                className="xyz"
+                onMouseEnter={() => setBeautyHealth(true)}
+                onMouseLeave={() => setBeautyHealth(false)}
+              >
                 <MenuGroup title="Make Up" color="#da60b0">
                   <MenuItem fontSize={13} marginLeft={1} color="grey">
                     Face
@@ -481,7 +505,11 @@ const LowerNavbar = () => {
               <p className="lower_nav_bar_divs_para">Jewellery & Accessories</p>
             </MenuButton>
             <MenuList marginTop="4px">
-              <div className="xyz">
+              <div
+                className="xyz"
+                onMouseEnter={() => setJewelleryAccessories(true)}
+                onMouseLeave={() => setJewelleryAccessories(false)}
+              >
                 <MenuGroup title="Jewellery" color="#da60b0">
                   <MenuItem fontSize={13} marginLeft={1} color="grey">
                     Jewellery Ser
@@ -540,7 +568,11 @@ const LowerNavbar = () => {
               <p className="lower_nav_bar_divs_para">Bag & Footwears</p>
             </MenuButton>
             <MenuList marginTop="4px">
-              <div className="xyz">
+              <div
+                className="xyz"
+                onMouseEnter={() => setBagFootwears(true)}
+                onMouseLeave={() => setBagFootwears(false)}
+              >
                 <MenuGroup title="Top Wear" color="#da60b0">
                   <MenuItem fontSize={13} marginLeft={1} color="grey">
                     All Top Wear
@@ -625,7 +657,11 @@ const LowerNavbar = () => {
               <p className="lower_nav_bar_divs_para">Electronics</p>
             </MenuButton>
             <MenuList marginTop="4px">
-              <div className="xyz">
+              <div
+                className="xyz"
+                onMouseEnter={() => setElectronics(true)}
+                onMouseLeave={() => setElectronics(false)}
+              >
                 <MenuGroup title="Mobile & Accessories" color="#da60b0">
                   <MenuItem fontSize={13} marginLeft={1} color="grey">
                     All Mobile & Accessories
