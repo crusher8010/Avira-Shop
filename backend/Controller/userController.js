@@ -48,6 +48,7 @@ exports.Login = async (req, res) => {
 
                     res.status(201).json({
                         status: "fail",
+                        userData: user,
                         token
                     })
                 } else {

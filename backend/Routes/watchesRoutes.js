@@ -7,7 +7,7 @@ const { getAllProducts, createProduct, updateProduct, deleteProduct } = watchesC
 
 const Router = express.Router();
 
-Router.route('/').get(Validator, getAllProducts).post(Validator, createProduct);
+Router.route('/').get(getAllProducts).post(Validator, createProduct);
 Router.route('/:id').patch(Validator, updateProduct).delete(Validator, deleteProduct);
 
 module.exports = Router;
