@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const SareeSchema = mongoose.Schema({
+const westerTopSchema = mongoose.Schema({
     url: {
         type: String,
         require: true
@@ -32,6 +32,6 @@ const SareeSchema = mongoose.Schema({
     }
 })
 
-const Sarees = mongoose.model('westernsaree', SareeSchema);
+const westernTop = mongoose.model('westernTop', westerTopSchema);
 
-module.exports = Sarees;
+module.exports = westernTop;

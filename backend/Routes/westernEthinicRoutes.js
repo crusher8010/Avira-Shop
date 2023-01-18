@@ -1,9 +1,9 @@
 const express = require('express');
-const sareeController = require('../Controller/sareeController');
+const westernEthinicController = require('../Controller/westernEthinicController');
 const middlewares = require('../Middlewares/middlewares');
 
 const { Validator } = middlewares;
-const { getAllProducts, createProduct, updateProduct, deleteProduct } = sareeController;
+const { getAllProducts, createProduct, updateProduct, deleteProduct } = westernEthinicController;
 
 const Router = express.Router();
 

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const KidsSchema = mongoose.Schema({
+const EthinicSchema = mongoose.Schema({
     url: {
         type: String,
         require: true
@@ -29,13 +29,9 @@ const KidsSchema = mongoose.Schema({
     fabric: {
         type: String,
         require: true
-    },
-    pattern: {
-        type: String,
-        require: true
     }
 })
 
-const Kids = mongoose.model('kidswear', KidsSchema);
+const westernEthinic = mongoose.model('westernEthinic', EthinicSchema);
 
-module.exports = Kids;
+module.exports = westernEthinic;
