@@ -15,8 +15,7 @@ const EthinicSchema = mongoose.Schema({
     },
     delivery: {
         type: String,
-        default: "Free Delivery",
-        required: true
+        default: "Free Delivery"
     },
     rating: {
         type: Number,

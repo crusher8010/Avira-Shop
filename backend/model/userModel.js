@@ -4,26 +4,25 @@ const UserSchema = mongoose.Schema({
     username: {
         type: String,
         unique: [true, 'Username already exists..'],
-        require: true
+        required: true
     },
     email: {
         type: String,
         unique: [true, 'email already exists..'],
-        require: true
+        required: true
     },
     mobile_no: {
         type: Number,
         unique: [true, 'Mobile Number already exists...'],
-        require: true
+        required: true
     },
     role: {
         type: String,
-        default: 'user',
-        require: true
+        default: 'user'
     },
     password: {
         type: String,
-        require: true
+        required: true
     }
 });
 
