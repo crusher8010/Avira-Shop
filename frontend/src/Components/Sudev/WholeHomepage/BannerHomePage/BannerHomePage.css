@@ -1,0 +1,148 @@
+.hero_banner_one {
+  height: 300px;
+  width: 70%;
+  margin: auto;
+  /* border: 1px solid red; */
+  margin-top: 20px;
+  display: flex;
+}
+
+.hero_banner_one_left {
+  width: 55%;
+  height: 100%;
+  /* border: 1px solid blue; */
+  background-color: #f9f9f9;
+}
+
+.hero_banner_one_left_div {
+  width: 90%;
+  height: auto;
+  margin: auto;
+  margin-top: 30px;
+  /* border: 1px solid red; */
+}
+
+.hero_banner_one_left_div_text {
+  height: auto;
+  width: 90%;
+  margin: auto;
+  /* border: 1px solid red; */
+}
+
+.hero_banner_one_left_div_text h1 {
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.hero_banner_one_left_div_free_cash_easy {
+  height: 57px;
+  width: 90%;
+  margin: auto;
+  /* border: 1px solid orange; */
+  background-color: #fff;
+  border-radius: 6px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.hero_banner_one_left_div_free_cash_easys {
+  display: flex;
+}
+
+.hero_banner_one_left_div_free_cash_easys_img {
+  height: 33px;
+  width: 33px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6a7ca;
+}
+
+/* .hero_banner_one_left_div_free_cash_easys_img img {
+} */
+
+.hero_banner_one_left_div_free_cash_easys_text {
+  margin-left: 8px;
+}
+
+.hero_banner_one_left_div_free_cash_easys_text p {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.hor_var {
+  height: 33px;
+  border-right: 1.3px solid grey;
+}
+
+.hero_banner_one_left_download {
+  height: 41px;
+  width: 90%;
+  margin: auto;
+  margin-top: 17px;
+}
+
+.hero_banner_one_left_download_btn {
+  height: 100%;
+  width: 60%;
+  background-color: #f6a7ca;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+
+.hero_banner_one_left_download_btn p {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.hero_banner_one_right {
+  width: 45%;
+  height: 100%;
+  /* border: 1px solid blue; */
+}
+
+.hero_banner_one_right img {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* ////////////////////////////////// */
+
+.home_middle_text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 30px;
+  width: 70%;
+}
+
+.home_middle_text_one {
+  flex: 1;
+  background-color: #f6a7ca;
+  height: 1px;
+}
+
+.home_middle_text p {
+  margin: 0 35px;
+  font-size: 35px;
+  font-weight: 500;
+}
+
+/* ////////////////////////////////// */
+
+.hero_banner_twos {
+  height: auto;
+  width: 70%;
+  margin: auto;
+  margin-top: 30px;
+  cursor: pointer;
+}
