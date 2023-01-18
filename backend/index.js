@@ -5,6 +5,7 @@ const cors = require('cors');
 const userRouter = require('./Routes/userRoutes');
 const sareeRouter = require('./Routes/sareeRoutes');
 const mensRouter = require('./Routes/mensRoutes');
+const kidsRouter = require('./Routes/kidsRoutes');
 
 dotenv.config({ path: './config.env' });
 
@@ -18,6 +19,7 @@ app.use(cors({
 app.use('/', userRouter);
 app.use('/sarees', sareeRouter);
 app.use('/mens', mensRouter);
+app.use('/kids', kidsRouter);
 
 mongoose.set("strictQuery", false);
 
