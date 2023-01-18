@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const KidsSchema = mongoose.Schema({
+const WatchSchema = mongoose.Schema({
     url: {
         type: String,
         require: true
@@ -25,17 +25,9 @@ const KidsSchema = mongoose.Schema({
     color: {
         type: String,
         require: true
-    },
-    fabric: {
-        type: String,
-        require: true
-    },
-    pattern: {
-        type: String,
-        require: true
     }
-})
+});
 
-const Kids = mongoose.model('kidswear', KidsSchema);
+const Watches = mongoose.model('Watches', WatchSchema);
 
-module.exports = Kids;
+module.exports = Watches;

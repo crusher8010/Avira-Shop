@@ -2,10 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
+
 const userRouter = require('./Routes/userRoutes');
-const sareeRouter = require('./Routes/sareeRoutes');
+const westernEthinicRouter = require('./Routes/westernEthinicRoutes');
 const mensRouter = require('./Routes/mensRoutes');
 const kidsRouter = require('./Routes/kidsRoutes');
+const westernTopRouter = require('./Routes/westernTopRoutes');
+const watchesRouter = require('./Routes/watchesRoutes')
 
 dotenv.config({ path: './config.env' });
 
@@ -17,9 +20,11 @@ app.use(cors({
 }));
 
 app.use('/', userRouter);
-app.use('/sarees', sareeRouter);
+app.use('/westernEthinic', westernEthinicRouter);
 app.use('/mens', mensRouter);
 app.use('/kids', kidsRouter);
+app.use('/westernTop', westernTopRouter);
+app.use('/watches', watchesRouter);
 
 mongoose.set("strictQuery", false);
 
