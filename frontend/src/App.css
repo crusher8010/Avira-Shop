@@ -12,6 +12,9 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+*,*::after,*::before{
+  margin: 0;
+}
 
 .App-header {
   background-color: #282c34;
@@ -35,4 +38,7 @@
   to {
     transform: rotate(360deg);
   }
+}
+::-webkit-scrollbar{
+  display: none;
 }
