@@ -1,0 +1,70 @@
+.signup{
+    background: linear-gradient(rgb(253, 233, 242) 0%, rgb(253, 240, 232) 100%, rgb(253, 240, 232) 100%);
+    padding-top: 50px;
+    height: 100vh;
+}
+
+.box{
+    width:400px;
+    margin: auto;
+    padding-bottom: 60px;
+    border-radius: 10px;
+    background-color: white;
+}
+.box input{
+    border: 1px solid black;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+.box>div{
+    display: block;
+    width: 85%;
+    margin: auto;
+    text-align: center;
+}
+.box>div div{
+    width: 100%;
+    position: relative;
+}
+.box>div div>i{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    cursor: pointer;
+    color: grey;
+}
+
+.box>img{
+    margin-bottom: 40px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.box>div>*{
+    margin-top: 28px;
+}
+.button{
+    width: 100%;
+    padding: 7px 0px;
+    border-radius: 5px;
+    background-color: rgb(239, 55, 154);
+    color: white;
+    border: none;
+}
+.google{
+    background-color: white;
+    border: 1px solid black;
+    width: 100%;
+    padding: 7px 0px;
+    border-radius: 5px;
+}
+span{
+    color: blue;
+    cursor: pointer;
+}
+@media (max-width:400px) {
+    .box{
+        width:100%;
+    }
+  }
