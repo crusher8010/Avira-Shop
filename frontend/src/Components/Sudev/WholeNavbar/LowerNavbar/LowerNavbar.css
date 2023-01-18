@@ -22,9 +22,10 @@
   /* color: red; */
 }
 
+.abc:hover {
+  color: red;
+}
+
 .xyz {
   display: flex;
 }
-
-
-

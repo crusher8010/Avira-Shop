@@ -1,18 +1,19 @@
 import React from "react";
 import "./Homepage.css";
 import Navbar from "../../WholeNavbar/MainNavbar/Navbar";
+import BannerHomePage from "../BannerHomePage/BannerHomePage";
+import ProductHomePage from "../ProductHomePage/ProductHomePage";
+import Footer from "../../WholeFooter/Footer/Footer";
 
 const Homepage = () => {
   return (
     <>
       <Navbar />
       <div className="homepage_main">
-        <img
-          src="https://images.meesho.com/images/marketing/1631722939962.webp"
-          alt=""
-        />
+        <BannerHomePage />
+        <ProductHomePage />
       </div>
-      <div>Meeso</div>
+      <Footer />
     </>
   );
 };
