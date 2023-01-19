@@ -9,6 +9,7 @@ const mensRouter = require('./Routes/mensRoutes');
 const kidsRouter = require('./Routes/kidsRoutes');
 const westernTopRouter = require('./Routes/westernTopRoutes');
 const watchesRouter = require('./Routes/watchesRoutes')
+const sampleRouter = require('./Routes/sampleRoutes');
 
 dotenv.config({ path: './config.env' });
 
@@ -25,6 +26,7 @@ app.use('/mens', mensRouter);
 app.use('/kids', kidsRouter);
 app.use('/westernTop', westernTopRouter);
 app.use('/watches', watchesRouter);
+app.use('/sample', sampleRouter);
 
 mongoose.set("strictQuery", false);
 
