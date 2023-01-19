@@ -99,6 +99,7 @@
   /* width: 25%; */
   border: 1px solid lightgray;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 .products_div img {
