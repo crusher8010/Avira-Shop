@@ -3,11 +3,23 @@
     justify-content: space-around;
     align-items: center;
     height: 80px;
-    background-color: #da60b0;
-    color: #fff;
+    background-color: #fff;
+    color: #cc2293;
+    border: 1px solid lightgray;
     position: sticky;
     top: 0;
     z-index: 30;
+}
+
+.graphContainer {
+    width: 96%;
+    margin-top: 35px;
+}
+
+.barchartHeading {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
 }
 
 .shopLogo {
@@ -28,9 +40,9 @@
 .adminaddproduct,
 .welcomeAdmin {
     text-decoration: none;
-    color: #fff;
+    color: #cc2293;
     font-size: 1.3rem;
-    padding: 10px 40px;
+    padding: 0 20px;
     margin: 0 10px;
     cursor: pointer;
 }
@@ -58,7 +70,7 @@
         position: absolute;
         display: block;
         list-style: none;
-        background-color: #da60b0;
+        background-color: #fff;
         left: 0;
         top: 80px;
         transition: all 0.5s ease-in-out;
@@ -68,7 +80,7 @@
     .adminDashboard,
     .purchaseHistory,
     .adminaddproduct {
-        color: #fff;
+        color: #cc2293;
         text-align: center;
         padding: 2rem;
         width: 100%;
@@ -84,12 +96,24 @@
         display: block;
         position: absolute;
         font-size: 2rem;
-        color: #fff;
-        background-color: #da60b0;
+        color: #cc2293;
+        background-color: #fff;
         border: none;
         outline: none;
         top: 15px;
         right: 25px;
         z-index: 30;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .barchartHeading {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .barchartHeading {
+        font-size: 1rem;
     }
 }

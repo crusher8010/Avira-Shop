@@ -26,7 +26,7 @@ exports.Register = (req, res) => {
 
     } catch (err) {
         res.status(400).json({
-            Status: "fail",
+            status: "fail",
             err
         })
     }
@@ -38,7 +38,7 @@ exports.Login = async (req, res) => {
 
         const getUser = await User.find({ username });
 
-        console.log(getUser);
+        // console.log(getUser);
 
         if (getUser.length > 0) {
             let user = getUser[0];
@@ -47,7 +47,7 @@ exports.Login = async (req, res) => {
                     let token = jwt.sign({ user }, process.env.KEY)
 
                     res.status(201).json({
-                        status: "fail",
+                        status: "success",
                         userData: user,
                         token
                     })

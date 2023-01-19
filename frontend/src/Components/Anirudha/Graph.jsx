@@ -1,6 +1,6 @@
 import React from 'react';
-import { XAxis, YAxis, CartesianGrid, Tooltip, Legend, BarChart, Bar } from "recharts";
-import './Graph.css';
+import { useEffect, useState } from "react";
+import { XAxis, YAxis, CartesianGrid, Tooltip, Legend, BarChart, Bar, ResponsiveContainer } from "recharts";
 
 const data = [
     {
@@ -83,29 +83,44 @@ const data = [
     }
 ];
 
+function useWindowSize() {
+    const [size, setSize] = useState([window.innerHeight, window.innerWidth]);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setSize([window.innerHeight, window.innerWidth]);
+        };
+
+        window.addEventListener("resize", handleResize)
+    }, []);
+    return size;
+}
+
 function Graph() {
+    const [height, width] = useWindowSize();
 
     return (
-        <div style={{ width: "90%", margin: "auto" }}>
-            <BarChart
-                width={1300}
-                height={420}
-                data={data}
-                margin={{
-                    top: 5,
-                    right: 30,
-                    left: 20,
-                    bottom: 5
-                }}
-            >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="pv" fill="#8884d8" />
-                <Bar dataKey="uv" fill="#82ca9d" />
-            </BarChart>
+        <div className='graphContainer' >
+            <ResponsiveContainer width={"100%"} aspect={width > 801 ? 3 : width > 401 ? 2 : 1.7}>
+                <BarChart
+                    data={data}
+                    margin={{
+                        top: 5,
+                        right: 30,
+                        left: 20,
+                        bottom: 5
+                    }}
+                >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey="pv" fill="#8884d8" />
+                    <Bar dataKey="uv" fill="#82ca9d" />
+                </BarChart>
+            </ResponsiveContainer>
+            <h1 className='barchartHeading'>Avira's Sales Chart</h1>
         </div>
     )
 }
