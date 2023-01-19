@@ -101,6 +101,7 @@ function Graph() {
 
     return (
         <div className='graphContainer' >
+            <h1 className='barchartHeading'>Avira's Sales Chart</h1>
             <ResponsiveContainer width={"100%"} aspect={width > 801 ? 3 : width > 401 ? 2 : 1.7}>
                 <BarChart
                     data={data}
@@ -120,7 +121,6 @@ function Graph() {
                     <Bar dataKey="uv" fill="#82ca9d" />
                 </BarChart>
             </ResponsiveContainer>
-            <h1 className='barchartHeading'>Avira's Sales Chart</h1>
         </div>
     )
 }
