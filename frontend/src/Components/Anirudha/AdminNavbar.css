@@ -1,0 +1,95 @@
+.adminNavbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    background-color: #da60b0;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 30;
+}
+
+.shopLogo {
+    width: 10%;
+    height: 70px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    width: 75%;
+}
+
+.adminDashboard,
+.purchaseHistory,
+.adminaddproduct,
+.welcomeAdmin {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.3rem;
+    padding: 10px 40px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.mobile-menu-icon {
+    display: none;
+}
+
+@media screen and (max-width: 1180px) {
+    .shopLogo {
+        display: flex;
+        position: absolute;
+        width: 18%;
+        height: 70px;
+        /* top: 10px; */
+        left: 35px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links-mob {
+        width: 102vw;
+        position: absolute;
+        display: block;
+        list-style: none;
+        background-color: #da60b0;
+        left: 0;
+        top: 80px;
+        transition: all 0.5s ease-in-out;
+        width: 100%;
+    }
+
+    .adminDashboard,
+    .purchaseHistory,
+    .adminaddproduct {
+        color: #fff;
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        transition: all 0.5s ease;
+        cursor: pointer;
+    }
+
+    .welcomeAdmin {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+        position: absolute;
+        font-size: 2rem;
+        color: #fff;
+        background-color: #da60b0;
+        border: none;
+        outline: none;
+        top: 15px;
+        right: 25px;
+        z-index: 30;
+    }
+}
