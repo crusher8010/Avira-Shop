@@ -14,6 +14,12 @@ const ProductHomePage = () => {
   const [category, setCategory] = useState(false);
   const [genders, setGenders] = useState(false);
   const [fabbric, setFabric] = useState(false);
+  const [color, setColor] = useState(false);
+  const [price, setPrice] = useState(false);
+  const [ocassion, setOcassion] = useState(false);
+  const [combo, setCombo] = useState(false);
+  const [material, setMaterial] = useState(false);
+  const [printOrPatternType, setPrintOrPatternType] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -213,6 +219,248 @@ const ProductHomePage = () => {
                 )}
               </div>
               {/* Below this */}
+              <div className="category_product">
+                <div
+                  className="category_text_product"
+                  onClick={() => setColor(!color)}
+                >
+                  <p>Color</p>
+                  {color ? (
+                    <RiArrowDropUpLine size={25} />
+                  ) : (
+                    <RiArrowDropDownLine size={25} />
+                  )}
+                </div>
+                {color && (
+                  <div className="category_text_product_gender">
+                    <div className="all_gender">Blue</div>
+                    <div className="all_gender">Black</div>
+                    <div className="all_gender">White</div>
+                    <div className="all_gender">Red</div>
+                  </div>
+                )}
+              </div>
+              {/* Below this */}
+
+              <div className="category_product">
+                <div
+                  className="category_text_product"
+                  onClick={() => setPrice(!price)}
+                >
+                  <p>Price</p>
+                  {price ? (
+                    <RiArrowDropUpLine size={25} />
+                  ) : (
+                    <RiArrowDropDownLine size={25} />
+                  )}
+                </div>
+                {price && (
+                  <div className="category_text_product_price">
+                    <div className="all_price">$ Under 149</div>
+                    <div className="all_price">$ Under 199</div>
+                    <div className="all_price">$ Under 249</div>
+                    <div className="all_price">$ Under 299</div>
+                    <div className="all_price">$ Under 349</div>
+                  </div>
+                )}
+              </div>
+              {/* Below this */}
+              <div className="category_product">
+                <div
+                  className="category_text_product"
+                  onClick={() => setOcassion(!ocassion)}
+                >
+                  <p>Ocassion</p>
+                  {ocassion ? (
+                    <RiArrowDropUpLine size={25} />
+                  ) : (
+                    <RiArrowDropDownLine size={25} />
+                  )}
+                </div>
+
+                {ocassion && (
+                  <div className="rest_category_text_product">
+                    <div className="input_categ">
+                      <CiSearch />
+                      <input
+                        type="text"
+                        name=""
+                        id=""
+                        placeholder="Search..."
+                      />
+                    </div>
+
+                    <div className="check_box_cate mar-top">
+                      <input type="checkbox" name="" id="" />
+                      <p>Accupressure Rollers</p>
+                    </div>
+                    <div className="check_box_cate">
+                      <input type="checkbox" name="" id="" />
+                      <p>Accupressure support</p>
+                    </div>
+                    <div className="check_box_cate">
+                      <input type="checkbox" name="" id="" />
+                      <p>Analog Watches</p>
+                    </div>
+                    <div className="check_box_cate">
+                      <input type="checkbox" name="" id="" />
+                      <p>Anklets & Toe Rings</p>
+                    </div>
+                    <div className="check_box_cate">
+                      <input type="checkbox" name="" id="" />
+                      <p>Bangles & Bracelets</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+              {/* Bellow This */}
+              <div className="category_product">
+                <div
+                  className="category_text_product"
+                  onClick={() => setCombo(!combo)}
+                >
+                  <p>Combo</p>
+                  {combo ? (
+                    <RiArrowDropUpLine size={25} />
+                  ) : (
+                    <RiArrowDropDownLine size={25} />
+                  )}
+                </div>
+
+                {combo && (
+                  <div className="rest_category_text_product">
+                    <div className="input_categ">
+                      <CiSearch />
+                      <input
+                        type="text"
+                        name=""
+                        id=""
+                        placeholder="Search..."
+                      />
+                    </div>
+
+                    <div className="check_box_cate mar-top">
+                      <input type="checkbox" name="" id="" />
+                      <p>Accupressure Rollers</p>
+                    </div>
+                    <div className="check_box_cate">
+                      <input type="checkbox" name="" id="" />
+                      <p>Accupressure support</p>
+                    </div>
+                    <div className="check_box_cate">
+                      <input type="checkbox" name="" id="" />
+                      <p>Analog Watches</p>
+                    </div>
+                    <div className="check_box_cate">
+                      <input type="checkbox" name="" id="" />
+                      <p>Anklets & Toe Rings</p>
+                    </div>
+                    <div className="check_box_cate">
+                      <input type="checkbox" name="" id="" />
+                      <p>Bangles & Bracelets</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+              {/* Bellow This */}
+              <div className="category_product">
+                <div
+                  className="category_text_product"
+                  onClick={() => setMaterial(!material)}
+                >
+                  <p>Material</p>
+                  {material ? (
+                    <RiArrowDropUpLine size={25} />
+                  ) : (
+                    <RiArrowDropDownLine size={25} />
+                  )}
+                </div>
+
+                {material && (
+                  <div className="rest_category_text_product">
+                    <div className="input_categ">
+                      <CiSearch />
+                      <input
+                        type="text"
+                        name=""
+                        id=""
+                        placeholder="Search..."
+                      />
+                    </div>
+
+                    <div className="check_box_cate mar-top">
+                      <input type="checkbox" name="" id="" />
+                      <p>Accupressure Rollers</p>
+                    </div>
+                    <div className="check_box_cate">
+                      <input type="checkbox" name="" id="" />
+                      <p>Accupressure support</p>
+                    </div>
+                    <div className="check_box_cate">
+                      <input type="checkbox" name="" id="" />
+                      <p>Analog Watches</p>
+                    </div>
+                    <div className="check_box_cate">
+                      <input type="checkbox" name="" id="" />
+                      <p>Anklets & Toe Rings</p>
+                    </div>
+                    <div className="check_box_cate">
+                      <input type="checkbox" name="" id="" />
+                      <p>Bangles & Bracelets</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+              {/* Bellow This */}
+
+              <div className="category_product">
+                <div
+                  className="category_text_product"
+                  onClick={() => setPrintOrPatternType(!printOrPatternType)}
+                >
+                  <p>Print Or Pattern Type</p>
+                  {printOrPatternType ? (
+                    <RiArrowDropUpLine size={25} />
+                  ) : (
+                    <RiArrowDropDownLine size={25} />
+                  )}
+                </div>
+
+                {printOrPatternType && (
+                  <div className="rest_category_text_product">
+                    <div className="input_categ">
+                      <CiSearch />
+                      <input
+                        type="text"
+                        name=""
+                        id=""
+                        placeholder="Search..."
+                      />
+                    </div>
+
+                    <div className="check_box_cate mar-top">
+                      <input type="checkbox" name="" id="" />
+                      <p>Accupressure Rollers</p>
+                    </div>
+                    <div className="check_box_cate">
+                      <input type="checkbox" name="" id="" />
+                      <p>Accupressure support</p>
+                    </div>
+                    <div className="check_box_cate">
+                      <input type="checkbox" name="" id="" />
+                      <p>Analog Watches</p>
+                    </div>
+                    <div className="check_box_cate">
+                      <input type="checkbox" name="" id="" />
+                      <p>Anklets & Toe Rings</p>
+                    </div>
+                    <div className="check_box_cate">
+                      <input type="checkbox" name="" id="" />
+                      <p>Bangles & Bracelets</p>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
           <div className="productHomePage_product_side">
