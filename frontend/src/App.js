@@ -1,11 +1,8 @@
-// import Homepage from "./Components/Sudev/WholeHomepage/Homepage/Homepage";
-import AdminAddProducts from "./Components/Anirudha/AdminAddProducts";
-
+import Homepage from "./Components/Sudev/WholeHomepage/Homepage/Homepage"
 function App() {
   return (
     <>
-      <AdminAddProducts />
-      {/* <Homepage />  */}
+    <Homepage/>
     </>
   );
 }

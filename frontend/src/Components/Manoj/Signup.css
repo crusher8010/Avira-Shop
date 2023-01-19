@@ -52,6 +52,15 @@
     color: white;
     border: none;
 }
+.button:hover{
+    width: 100%;
+    padding: 7px 0px;
+    border-radius: 5px;
+    background-color: rgb(239, 55, 154);
+    color: white;
+    border: none;
+    opacity: 60%;
+}
 .google{
     background-color: white;
     border: 1px solid black;
