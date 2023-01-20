@@ -18,7 +18,7 @@ function AdminNavbar() {
                         <li>Dashboard</li>
                     </div>
                 </Link>
-                <Link to='/adminPurchase' className="purchaseHistory">
+                <Link to='/purchaseHistory' className="purchaseHistory">
                     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "4px" }}>
                         <MdDescription fontSize={"24px"} />
                         <li>Purchase History</li>
