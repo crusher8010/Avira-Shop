@@ -73,6 +73,7 @@
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.1px;
+  color: black;
 }
 
 .nav-bar-h1-tag {
@@ -107,6 +108,7 @@
 }
 .upper_nav_bar_right_prof_icon {
   margin-left: 10px;
+  color: black;
 }
 
 .upper_nav_bar_right_big_para {
@@ -244,4 +246,45 @@
   margin-left: 5px;
   cursor: pointer;
   color: gray;
+}
+
+/* Mobile Size */
+
+@media screen and (max-width: 330px) {
+  .upper_nav_bar {
+    width: 100%;
+    height: auto;
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-top: 2px;
+  }
+
+  .upper_nav_bar_left {
+    width: 100%;
+    height: 61px;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .upper_nav_bar_right {
+    width: 100%;
+    height: 60px;
+    /* border: 1px solid forestgreen; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-bar-h3-tag {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    color: black;
+  }
 }

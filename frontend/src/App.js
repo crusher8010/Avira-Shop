@@ -1,8 +1,11 @@
-import Homepage from "./Components/Sudev/WholeHomepage/Homepage/Homepage"
+// import Navbar from "./Components/Sudev/WholeNavbar/MainNavbar/Navbar";
+
+import AllRoutes from "./Pages/AllRoutes";
 function App() {
   return (
     <>
-      <Homepage />
+      <AllRoutes />
+      {/* <Navbar /> */}
 
     </>
   );

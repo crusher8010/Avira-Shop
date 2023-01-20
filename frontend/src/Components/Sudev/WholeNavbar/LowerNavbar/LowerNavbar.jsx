@@ -49,28 +49,28 @@ const LowerNavbar = () => {
                 <MenuDivider />
 
                 <MenuGroup title="Sarees" color="#da60b0" bgColor="">
-                  <MenuItem fontSize={13} marginLeft={1} color="grey">
+                  <MenuItem fontSize={12} marginLeft={1} color="grey">
                     All Sarees
                   </MenuItem>
-                  <MenuItem fontSize={13} marginLeft={1} color="grey">
+                  <MenuItem fontSize={12} marginLeft={1} color="grey">
                     Silk Sarees
                   </MenuItem>
-                  <MenuItem fontSize={13} marginLeft={1} color="grey">
+                  <MenuItem fontSize={12} marginLeft={1} color="grey">
                     Cotton Silk Sarees
                   </MenuItem>
-                  <MenuItem fontSize={13} marginLeft={1} color="grey">
+                  <MenuItem fontSize={12} marginLeft={1} color="grey">
                     Cotton Sarees
                   </MenuItem>
-                  <MenuItem fontSize={13} marginLeft={1} color="grey">
+                  <MenuItem fontSize={12} marginLeft={1} color="grey">
                     Georgette Sarees
                   </MenuItem>
-                  <MenuItem fontSize={13} marginLeft={1} color="grey">
+                  <MenuItem fontSize={12} marginLeft={1} color="grey">
                     Chiffon Sarees
                   </MenuItem>
                   <MenuItem fontSize={13} marginLeft={1} color="grey">
                     Satin Sarees
                   </MenuItem>
-                  <MenuItem fontSize={13} marginLeft={1} color="grey">
+                  <MenuItem fontSize={12} marginLeft={1} color="grey">
                     Embroidered Sarees
                   </MenuItem>
                 </MenuGroup>
