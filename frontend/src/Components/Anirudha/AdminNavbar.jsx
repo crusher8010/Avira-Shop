@@ -10,7 +10,7 @@ function AdminNavbar() {
 
     return (
         <nav className="adminNavbar">
-            <img className="shopLogo" src={logo} alt="Shop logo" />
+            <Link to='/'><img className="shopLogo" src={logo} alt="Shop logo" /></Link>
             <div className={isMob ? "nav-links-mob" : "nav-links"} onClick={() => setIsMob(false)}>
                 <Link to='/adminDashboard' className="adminDashboard">
                     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "4px" }}>
