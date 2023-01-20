@@ -5,6 +5,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { RiArrowDropUpLine } from "react-icons/ri";
 import { HiStar } from "react-icons/hi";
 import { CiSearch } from "react-icons/ci";
+import { useRef } from "react";
 
 const ProductHomePage = () => {
   const [menu, setMenu] = useState("Relevance");
@@ -20,6 +21,10 @@ const ProductHomePage = () => {
   const [combo, setCombo] = useState(false);
   const [material, setMaterial] = useState(false);
   const [printOrPatternType, setPrintOrPatternType] = useState(false);
+
+  const windowWidth = useRef(window.innerWidth);
+
+  console.log("width: ", windowWidth.current);
 
   useEffect(() => {
     setLoading(true);
