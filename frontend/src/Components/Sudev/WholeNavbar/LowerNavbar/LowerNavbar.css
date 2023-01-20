@@ -29,3 +29,21 @@
 .xyz {
   display: flex;
 }
+
+@media screen and (max-width: 330px) {
+
+  .lower_nav_bar_divs {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .lower_nav_bar_divs_para {
+    font-size: 9px;
+    font-weight: 500;
+    /* color: red; */
+  }
+}

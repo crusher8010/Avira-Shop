@@ -5,3 +5,13 @@
   position: relative;
   margin-top: 135px;
 }
+
+@media screen and (max-width: 330px) {
+  .homepage_main {
+    width: 100%;
+    height: auto;
+    /* border: 1px solid red; */
+    position: relative;
+    margin-top: 185px;
+  }
+}
