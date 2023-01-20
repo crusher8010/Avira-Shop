@@ -12,13 +12,13 @@ import { store } from './Components/Ankita/Redux/store';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Globalcontextprovider>
-  <ChakraProvider>
-    <BrowserRouter>
-    <Provider store={store}>
-      <App />
-      </Provider>
-    </BrowserRouter>
-  </ChakraProvider>
+    <ChakraProvider>
+      <BrowserRouter>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </BrowserRouter>
+    </ChakraProvider>
   </Globalcontextprovider>
 );
 
