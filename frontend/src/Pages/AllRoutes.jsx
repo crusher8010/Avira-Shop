@@ -18,11 +18,6 @@ const AllRoutes = () => {
         <Route path="/adminDashboard" element={<AdminDashboard />}></Route>
         <Route path="/adminaddproduct" element={<AdminAddProducts />}></Route>
         <Route path="/" element={<Homepage />}></Route>
-
-        <Route path='/signup' element={<Signup />} ></Route>
-        <Route path='/login' element={<Login />} ></Route>
-        <Route path='/adminDashboard' element={<AdminDashboard />}></Route>
-        <Route path='/adminaddproduct' element={<AdminAddProducts />}></Route>
         <Route path="/purchaseHistory" element={<PurchaseHistory />}></Route>
 
       </Routes>

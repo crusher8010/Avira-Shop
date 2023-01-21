@@ -101,8 +101,8 @@ const Western = () => {
     sortDataByAsc().then((res) => {
       setIsLoading(false);
       // console.log(res.data.data.MensWear)
-      setData(res.data.data.MensWear);
-      dispatch(getBeverageSuccess(res.data.data.MensWear));
+      setData(res.data);
+      dispatch(getBeverageSuccess(res.data));
     });
   };
 
