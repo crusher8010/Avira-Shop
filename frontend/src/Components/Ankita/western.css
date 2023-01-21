@@ -341,6 +341,10 @@
     gap: 20px;
   }
   
+#gif {
+    width:60%;
+    height:300px
+  }
   .products_div {
     height: auto;
     /* width: 25%; */

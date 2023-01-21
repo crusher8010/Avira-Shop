@@ -1,3 +1,4 @@
+import { Box, Button, Center, Flex } from '@chakra-ui/react';
 import React from 'react';
 
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
@@ -8,17 +9,19 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
   }
 
   return (
-    <nav>
-      <ul className='pagination'>
+    <>
+        <Center>
+      <Flex className='pagination' gap={5} mt={10}>
         {pageNumbers.map(number => (
-          <li key={number} className='page-item'>
-            <a onClick={() => paginate(number)} href='!#' className='page-link'>
-              {number}
-            </a>
-          </li>
+          <Button  bgColor={"rgb(244, 51, 151)"} color={"white"} key={number} onClick={() => paginate(number)} 
+          >
+         
+             {number}
+          </Button>
         ))}
-      </ul>
-    </nav>
+      </Flex>
+      </Center>
+    </>
   );
 };
 
