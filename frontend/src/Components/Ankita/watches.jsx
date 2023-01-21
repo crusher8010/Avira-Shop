@@ -19,23 +19,23 @@ import Pagination from "./Pagination/pagination";
 //ALL SORTING FUNCTIONALITY ARE HERE API CALL ARE HERE
 const sortDataByAsc = () => {
   return axios.get(
-    "https://shy-puce-cod-hose.cyclic.app/mens?sort=price"
+    "https://shy-puce-cod-hose.cyclic.app/watches?sort=price"
   );
 };
 
 const sortDataByDesc = () => {
   return axios.get(
-    "https://shy-puce-cod-hose.cyclic.app/mens?sort=-price"
+    "https://shy-puce-cod-hose.cyclic.app/watches?sort=-price"
   );
 };
 
-const filterByCategory = (param) => {
-  return axios.get(
-    `https://shy-puce-cod-hose.cyclic.app/mens?category=${param}`
-  );
-};
+// const filterByCategory = (param) => {
+//   return axios.get(
+//     `https://shy-puce-cod-hose.cyclic.app/mens?category=${param}`
+//   );
+// };
 // ALL FUNCTIONALITY ARE API CALL ENDED
-const Western = () => {
+const Watches = () => {
   const [menu, setMenu] = useState("Relevance");
   const [show, setShow] = useState(false);
   const [category, setCategory] = useState(false);
@@ -117,7 +117,7 @@ const Western = () => {
   // FUNCTION TO GET THE DATA
   const loderData = async () => {
     return await axios
-      .get("https://shy-puce-cod-hose.cyclic.app/mens")
+      .get("https://shy-puce-cod-hose.cyclic.app/watches")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err))
   }
@@ -128,7 +128,7 @@ const Western = () => {
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    return await axios.get(`https://shy-puce-cod-hose.cyclic.app/mens?brand=${value}`)
+    return await axios.get(`https://shy-puce-cod-hose.cyclic.app/watches?brand=${value}`)
       .then((res) => {
         setData(res.data)
         setValue("")
@@ -697,4 +697,4 @@ const filterbycolor=async(clr)=>{
 };
 
 
-export default Western
+export default Watches
