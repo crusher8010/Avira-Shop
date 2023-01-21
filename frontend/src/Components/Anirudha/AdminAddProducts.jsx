@@ -124,17 +124,17 @@ function AdminAddProducts() {
             <div className='formContainer'>
                 <div>
                     <label htmlFor="url">Image Url</label>
-                    <Input borderRadius={"12px"} type="text" name="url" value={url} onChange={(e) => setUrl(e.target.value)} />
+                    <Input mt={2} borderRadius={"12px"} type="text" name="url" value={url} onChange={(e) => setUrl(e.target.value)} />
                     <label htmlFor="brand">Brand</label>
-                    <Input borderRadius={"12px"} type="text" name="brand" value={brand} onChange={(e) => setBrand(e.target.value)} />
+                    <Input mt={2} borderRadius={"12px"} type="text" name="brand" value={brand} onChange={(e) => setBrand(e.target.value)} />
                     <label htmlFor="price">Price</label>
-                    <Input borderRadius={"12px"} type="number" name="price" value={price} onChange={(e) => setPrice(e.target.value)} />
+                    <Input mt={2} borderRadius={"12px"} type="number" name="price" value={price} onChange={(e) => setPrice(e.target.value)} />
                 </div>
                 <div>
                     <label htmlFor="rating">Rating</label>
-                    <Input borderRadius={"12px"} type="number" name="rating" value={rat} onChange={(e) => setRat(e.target.value)} />
+                    <Input mt={2} borderRadius={"12px"} type="number" name="rating" value={rat} onChange={(e) => setRat(e.target.value)} />
                     <label htmlFor="color">Color</label>
-                    <Input borderRadius={"12px"} type="text" name="color" value={color} onChange={(e) => setColor(e.target.value)} />
+                    <Input mt={2} borderRadius={"12px"} type="text" name="color" value={color} onChange={(e) => setColor(e.target.value)} />
                     {change === true ? <button className='formbutton' type="submit" onClick={(e) => handlePatch(e)}>Update</button> : <button className='formbutton' type="submit" onClick={(e) => handleSubmit(e)}>Submit</button>}
                 </div>
             </div>

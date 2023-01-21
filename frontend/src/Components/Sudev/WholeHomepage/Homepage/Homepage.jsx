@@ -8,7 +8,7 @@ import Footer from "../../WholeFooter/Footer/Footer";
 const Homepage = () => {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <div className="homepage_main">
         <BannerHomePage />
         <ProductHomePage />
