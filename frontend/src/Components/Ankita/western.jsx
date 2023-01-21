@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./western.css";
 import axios from "axios";
 import { BsFillBagPlusFill } from "react-icons/bs";
-import { Spinner, Alert, AlertIcon, useToast, Menu, Box, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+import { Spinner, Alert, AlertIcon, useToast, Menu, Box, MenuButton, MenuList, MenuItem, Button } from "@chakra-ui/react";
 import { useNavigate } from "react-router";
 import { RiArrowDropDownLine } from "react-icons/ri"
 import { RiArrowDropUpLine } from "react-icons/ri";
@@ -16,38 +16,38 @@ import {
   getBeverageRequest,
   getBeverageSuccess,
 } from "./Redux/western/action";
-import { HiStar } from "react-icons/hi";
+
 import UpperNavbar from "../Sudev/WholeNavbar/UpperNavbar/UpperNavbar";
 import LowerNavbar from "../Sudev/WholeNavbar/LowerNavbar/LowerNavbar";
+import Post from "./datamap";
 import Pagination from "./Pagination/pagination";
-import Posts from "./datamap";
 
-const CurrentIndivisualData = (payload) => {
-  return axios.put(
-    "https://shy-puce-cod-hose.cyclic.app/mens/indivisualPageData",
-    payload
-  );
-};
+// const CurrentIndivisualData = (payload) => {
+//   return axios.put(
+//     "https://shy-puce-cod-hose.cyclic.app/mens/indivisualPageData",
+//     payload
+//   );
+// };
 
-const getData = () => {
-  return axios.get("https://shy-puce-cod-hose.cyclic.app/mens");
-};
+// const getData = () => {
+//   return axios.get("https://shy-puce-cod-hose.cyclic.app/mens");
+// };
 
 const sortDataByAsc = () => {
   return axios.get(
-    "https://shy-puce-cod-hose.cyclic.app/mens?_sort=price&_order=asc"
+    "https://shy-puce-cod-hose.cyclic.app/mens?sort=price"
   );
 };
 
 const sortDataByDesc = () => {
   return axios.get(
-    "https://shy-puce-cod-hose.cyclic.app/mens?_sort=price&_order=desc"
+    "https://shy-puce-cod-hose.cyclic.app/mens?sort=-price"
   );
 };
 
-const AddToCart = (payload) => {
-  return axios.post("https://kiwi-discovered-pyjama.glitch.me/cart", payload);
-};
+// const AddToCart = (payload) => {
+//   return axios.post("https://kiwi-discovered-pyjama.glitch.me/cart", payload);
+// };
 
 const filterByCategory = (param) => {
   return axios.get(
@@ -56,62 +56,63 @@ const filterByCategory = (param) => {
 };
 
 const Western = () => {
-    const [menu, setMenu] = useState("Relevance");
-    const [show, setShow] = useState(false);
-    const [products, setProducts] = useState("");
-    const [loading, setLoading] = useState(false);
-    const [category, setCategory] = useState(false);
-    const [genders, setGenders] = useState(false);
-    const [fabbric, setFabric] = useState(false);
-    const [color, setColor] = useState(false);
-    const [price, setPrice] = useState(false);
-    const [ocassion, setOcassion] = useState(false);
-    const [combo, setCombo] = useState(false);
-    const [material, setMaterial] = useState(false);
-    const [printOrPatternType, setPrintOrPatternType] = useState(false);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(10);
+  const [menu, setMenu] = useState("Relevance");
+  const [show, setShow] = useState(false);
+  const [products, setProducts] = useState("");
+  const [category, setCategory] = useState(false);
+  const [genders, setGenders] = useState(false);
+  const [fabbric, setFabric] = useState(false);
+  const [color, setColor] = useState(false);
+  const [price, setPrice] = useState(false);
+  const [ocassion, setOcassion] = useState(false);
+  const [combo, setCombo] = useState(false);
+  const [material, setMaterial] = useState(false);
+  const [value, setValue] = useState("");
+  const [printOrPatternType, setPrintOrPatternType] = useState(false);
+  const [loading, setIsLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(16);
+  const [data, setData] = useState([])
+  const list = useSelector((store) => store.BeverageReducer.list);
 
-
-  
-  let list = useSelector((store) => store.BeverageReducer.list);
-  // const [isLoading, setIsLoading] = useState(false);
   const isLoading = useSelector((store) => store.BeverageReducer.isLoading);
   const filterData = useSelector((store) => store.BeverageReducer.filterData);
-  // const [filterData, setFilterData] = useState(["Phone", "Watch"]);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const toast = useToast();
 
-  const handleGetData = () => {
-    // setIsLoading(true);
-    dispatch(getBeverageRequest());
-    getData()
-      .then((res) => {
-        // setIsLoading(false);
-        // setList(res.data);
-        dispatch(getBeverageSuccess(res.data));
-      })
-      .catch((err) => dispatch(getBeverageError()));
-  };
+  // const handleGetData = () => {
+  //   setIsLoading(true);
+  //   dispatch(getBeverageRequest());
+  //   getData()
+  //     .then((res) => {
+  //       setIsLoading(false);
+  //       setData(res.data.);
+  //       dispatch(getBeverageSuccess(res.data))
+  //       setData(res.data);
+  //     })
+  //     .catch((err) => dispatch(getBeverageError()));
+  // };
 
   const handleSortByAsc = () => {
-    // setIsLoading(true);
+    setIsLoading(true);
     dispatch(getBeverageRequest());
     sortDataByAsc().then((res) => {
-      // setIsLoading(false);
-      // setList(res.data);
-      dispatch(getBeverageSuccess(res.data));
+      setIsLoading(false);
+      // console.log(res.data.data.MensWear)
+      setData(res.data.data.MensWear);
+      dispatch(getBeverageSuccess(res.data.data.MensWear));
     });
   };
 
   const handlesortByDesc = () => {
-    // setIsLoading(true);
+    setIsLoading(true);
     dispatch(getBeverageRequest());
     sortDataByDesc().then((res) => {
-      // setIsLoading(false);
+      setIsLoading(false);
       dispatch(getBeverageSuccess(res.data));
-      // setList(res.data);
+      setData(res.data);
     });
   };
 
@@ -122,63 +123,120 @@ const Western = () => {
     );
   };
 
-  const resetFilters = () => {
-    handleGetData();
-  };
+  // const resetFilters = () => {
+  //   handleGetData();
+  // };
 
-  const PostToCart = (item) => {
-    AddToCart(item).then((res) => {
-      //   <Alert status="success">
-      //     <AlertIcon />
-      //     Item Added Successfully to the cart
-      //   </Alert>;
-      // alert("Item Added Successfully to the cart");
-      toast({
-        title: "Verification Reminder",
-        description: `"Item Added To Cart Successfully."`,
-        status: "success",
-        duration: 5000,
-        isClosable: true,
-        position: "top",
-      });
-    });
-  };
+  //const PostToCart = (item) => {
+  // AddToCart(item).then((res) => {
+  //   <Alert status="success">
+  //     <AlertIcon />
+  //     Item Added Successfully to the cart
+  //   </Alert>;
+  // alert("Item Added Successfully to the cart");
+  //     toast({
+  //       title: "Verification Reminder",
+  //       description: `"Item Added To Cart Successfully."`,
+  //       status: "success",
+  //       duration: 5000,
+  //       isClosable: true,
+  //       position: "top",
+  //     });
+  //   });
+  // };
 
-  const handleCurrentData = (item) => {
-    // console.log(item)
-    CurrentIndivisualData(item).then((res) =>
-      // console.log(res.data)
-      navigate("/indivisualPage")
-    );
-  };
+  // const handleCurrentData = (item) => {
+  //   // console.log(item)
+  //   CurrentIndivisualData(item).then((res) =>
+  //     // console.log(res.data)
+  //     navigate("/indivisualPage")
+  //   );
+  // };
+
+
   useEffect(() => {
-    handleGetData();
+
+    loderData();
+
   }, []);
-  // console.log("filter", filterCategory);
- // Get current posts
- const indexOfLastPost = currentPage * postsPerPage;
- const indexOfFirstPost = indexOfLastPost - postsPerPage;
- 
-//  const currentPosts = list.slice(indexOfFirstPost, indexOfLastPost);
-//  list=currentPosts
 
- // Change page
- const paginate = pageNumber => setCurrentPage(pageNumber);
+  const loderData = async () => {
+    return await axios
+      .get("https://shy-puce-cod-hose.cyclic.app/mens")
+      .then((res) => setData(res.data))
+      .catch((err) => console.log(err))
+  }
 
-  
+  const handleReset = () => {
+
+    loderData()
+  }
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    return await axios.get(`https://shy-puce-cod-hose.cyclic.app/mens?brand=${value}`)
+      .then((res) => {
+        setData(res.data)
+        setValue("")
+      })
+      .catch((err) => console.log(err))
+  }
+  if (data.length == 0) {
+    return (
+      <div className="productHomePage_product_side_loading">
+        <img id="gif"
+          src="https://media.tenor.com/unvXyxtdn3oAAAAC/no-result.gif"
+          alt="https://media.tenor.com/unvXyxtdn3oAAAAC/no-result.gif"
+        />
+      </div>
+    )
+  }
+  //  pagination
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  console.log(data, "After Sorting");
+  const currentPosts = data.data.MensWear.slice(indexOfFirstPost, indexOfLastPost);
+  //change page
+  console.log(currentPosts, "current")
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+
+
   return (
     <>
-    <div>
-    <UpperNavbar/>
-      <LowerNavbar/>
-    </div>
-      <div className="productHomePage" style={{width:"92%"}}>
-        <div className="productHomePage_sidebar_h1">
-          <h1 id="topic">Mens T-shirts</h1>
-          <h3 style={{fontSize:"18px",color:"rgb(244, 51, 151)"}}>Showing 1-20 out of 1000 products</h3>
+      <div>
+        <UpperNavbar />
+        <LowerNavbar />
+      </div>
+      <div className="productHomePage" style={{ width: "92%" }}>
+        <div style={{ display: "flex", gap: "20px" }}>
+          <div className="productHomePage_sidebar_h1" style={{ width: "30%" }} >
+            <h1 id="topic">Mens T-shirts</h1>
+            <h3 style={{ fontSize: "18px", color: "rgb(244, 51, 151)" }}>Showing 1-20 out of 1000 products</h3>
+          </div>
+          <form style={{
+            // margin:"auto",
+            padding: "15px",
+            Width: "60%",
+            alignContent: "center",
+
+          }}
+            className="d-flex input-group w-auto"
+            onSubmit={handleSearch}
+          >
+            <input
+              style={{ width: "420px", height: "38px", border: "2px solid black", color: "#cc2293", borderRadius: "5px", textIndent: "10px" }}
+              type="text"
+              className="form-content"
+              placeholder=" Avira Product..."
+              value={value}
+              onChange={(e) => setValue(e.target.value)} />
+            <Button type="submit" color="white" backgroundColor="rgb(244, 51, 151)" marginRight="4PX" marginLeft="4px">Search</Button>
+            <Button className="mx-2" color="white" backgroundColor="rgb(244, 51, 151)" onClick={() => handleReset()}>Reset</Button>
+
+          </form>
         </div>
         <div className="side_product_divs">
-          <div className="productHomePage_sidebar" style={{width:"20%"}}>
+          <div className="productHomePage_sidebar" style={{ width: "20%" }}>
             <div className="product_Sort_by" onClick={() => setShow(!show)}>
               <Box w={"100%"}>
                 <Menu isOpen={show}>
@@ -201,7 +259,7 @@ const Western = () => {
                   {show && (
                     <MenuList maxHeight={"140px"} overflow="scroll">
                       <MenuItem onClick={() => setMenu("Relevance")}>
-                        <p style={{fontSize:"18px"}}>Relevance</p>
+                        <p style={{ fontSize: "18px" }}>Relevance</p>
                       </MenuItem>
                       <MenuItem onClick={() => setMenu("New Arrivals")}>
                         <p>New Arrivals</p>
@@ -211,7 +269,13 @@ const Western = () => {
                       </MenuItem>
 
                       <MenuItem onClick={() => setMenu("Price (Low to High)")}>
-                        <p>Price (Low to High)</p>
+                        <p style={{ textAlign: "center" }}
+                          onClick={() => {
+                            // setList(list.sort((a, b) => a.price - b.price));
+                            handleSortByAsc();
+                          }}>Price (Low to High)
+
+                        </p>
                       </MenuItem>
 
                       <MenuItem onClick={() => setMenu("Ratings")}>
@@ -248,12 +312,7 @@ const Western = () => {
                   <div className="rest_category_text_product">
                     <div className="input_categ">
                       <CiSearch />
-                      <input
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder="Search..."
-                      />
+
                     </div>
 
                     <div className="check_box_cate mar-top">
@@ -322,7 +381,7 @@ const Western = () => {
                 {fabbric && (
                   <div className="category_text_product_fabbric">
                     <div className="check_box_cate">
-                      <input type="checkbox" name="" id="" />
+
                       <p>Accupressure Rollers</p>
                     </div>
                     <div className="check_box_cate">
@@ -490,11 +549,11 @@ const Western = () => {
                       <p>Analog Watches</p>
                     </div>
                     <div className="check_box_cate">
-                      <input type="checkbox" name="" id="" />
+
                       <p>Anklets & Toe Rings</p>
                     </div>
                     <div className="check_box_cate">
-                      <input type="checkbox" name="" id="" />
+
                       <p>Bangles & Bracelets</p>
                     </div>
                   </div>
@@ -518,32 +577,27 @@ const Western = () => {
                   <div className="rest_category_text_product">
                     <div className="input_categ">
                       <CiSearch />
-                      <input
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder="Search..."
-                      />
+
                     </div>
 
                     <div className="check_box_cate mar-top">
-                      <input type="checkbox" name="" id="" />
+
                       <p>Accupressure Rollers</p>
                     </div>
                     <div className="check_box_cate">
-                      <input type="checkbox" name="" id="" />
+
                       <p>Accupressure support</p>
                     </div>
                     <div className="check_box_cate">
-                      <input type="checkbox" name="" id="" />
+
                       <p>Analog Watches</p>
                     </div>
                     <div className="check_box_cate">
-                      <input type="checkbox" name="" id="" />
+
                       <p>Anklets & Toe Rings</p>
                     </div>
                     <div className="check_box_cate">
-                      <input type="checkbox" name="" id="" />
+
                       <p>Bangles & Bracelets</p>
                     </div>
                   </div>
@@ -568,12 +622,7 @@ const Western = () => {
                   <div className="rest_category_text_product">
                     <div className="input_categ">
                       <CiSearch />
-                      <input
-                        type="text"
-                        name=""
-                        id=""
-                        placeholder="Search..."
-                      />
+
                     </div>
 
                     <div className="check_box_cate mar-top">
@@ -600,19 +649,72 @@ const Western = () => {
                 )}
               </div>
             </div>
-          </div> 
+          </div>
           {/* sidebar */}
-           {/* <Posts list={currentPosts} loading={loading}/> */}
-           <Pagination
-        postsPerPage={postsPerPage}
-        totalPosts={list.length}
-        paginate={paginate}
-      />
+          {/* <div className="productHomePage_product_side">
+            {list.length===0? (
+              <div className="productHomePage_product_side_loading">
+                <img id="gif"
+                  src="https://media.tenor.com/unvXyxtdn3oAAAAC/no-result.gif"
+                  alt="https://media.tenor.com/unvXyxtdn3oAAAAC/no-result.gif"
+                />
+              </div>
+            ) : (
+              list &&
+              list?.data?.MensWear.map((ele,index) => (
+                <div className="products_div">
+                  <img src={ele.url} alt="" />
+                  <div className="all_details_products">
+                    {ele.brand.length > 20 ? (
+                      <p className="all_details_products_para">
+                        {ele.brand.substr(0, 20) + "..."}
+                      </p>
+                    ) : (
+                      <p className="all_details_products_para">{ele.brand}</p>
+                    )}
+                    <div className="price_product">
+                      <p className="all_details_products_price">
+                        $ {ele.price}
+                      </p>
+                      <p>onwards</p>
+                    </div>
+
+                    <div className="free_not_de">
+                      <p>Free Delivery</p>
+                    </div>
+
+                    <div className="rating_products">
+                      <div className="rating_green">
+                        <div className="rating_star">
+                          {ele.rating}
+                          <HiStar className="x" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))
+            )}
+          </div> */}
+
+          <Post
+            data={currentPosts}
+            loading={loading} />
+
+        </div>
+        {/* data call */}
+        <div>
+          <Pagination
+            postsPerPage={postsPerPage}
+            totalPosts={data.data.MensWear.length}
+            paginate={paginate}
+          />
         </div>
       </div>
+
     </>
   );
 };
-   
-  
-     export default Western
+
+
+export default Western
