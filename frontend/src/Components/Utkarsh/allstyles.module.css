@@ -1,0 +1,109 @@
+.navLink {
+  text-decoration: none;
+  color: black;
+}
+
+.logodiv {
+  margin-top: -30px;
+  padding: 10px;
+}
+
+.cartDiv,
+.address {
+  display: grid;
+  grid-template-columns: 45% 50%;
+  gap: 10px;
+  width: 80%;
+  margin: auto;
+}
+
+.cartLeftp1 {
+  display: flex;
+  align-items: center;
+  margin: 30px;
+}
+
+.cartLeftp1 strong {
+  margin-right: 15px;
+}
+
+.table th,
+td {
+  padding: 8px 35px;
+  color: #666666;
+}
+
+.table th,
+td {
+  padding: 8px 25px;
+}
+
+.itemDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid rgba(128, 128, 128, 0.267);
+}
+
+.middleItemDiv {
+  margin-left: 40px;
+}
+.cartRightSide {
+  margin-left: 100px;
+}
+
+.addressHead {
+  display: flex;
+  margin: 35px 0px;
+}
+
+.form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  border: 0.5px solid rgba(128, 128, 128, 0.267);
+  border-radius: 10px;
+}
+
+.cityDiv {
+  display: flex;
+}
+
+.stepsbox {
+  width: 600px;
+  margin: 36px auto 0;
+}
+
+.middleItemDiv * {
+  margin: 5px;
+}
+
+.drawerItem {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 20% 55% 20%;
+}
+
+.drawerQty {
+  display: flex;
+  margin: 10px 0px;
+}
+
+.drawerQty * {
+  margin-right: 5px;
+}
+
+.payMiddle {
+  display: flex;
+  background-color: #e7eeff;
+  justify-content: space-between;
+  width: 300px;
+  padding: 15px 5px;
+  margin: 20px 0px;
+}
+
+.pay1 {
+  padding-left: 160px;
+  padding-top: 20px;
+}

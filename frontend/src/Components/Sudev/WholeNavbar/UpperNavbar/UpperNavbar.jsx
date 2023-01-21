@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./UpperNavbar.css";
 import logo from "..//..//..//..//assets/logo.png";
 import { BsSearch } from "react-icons/bs";
@@ -15,6 +15,45 @@ import {
 } from "@chakra-ui/react";
 
 const UpperNavbar = () => {
+  const [click, setClick] = useState(false);
+  const [products, setProducts] = useState("");
+
+  // const [change, setChange] = useState("");
+  const [searchData, setSearchData] = useState("");
+
+  const DataFectch = (chang) => {
+    useEffect(() => {
+      fetch("https://shy-puce-cod-hose.cyclic.app/mens")
+        .then((res) => res.json())
+        .then((res) => {
+          console.log("nmbm", res.data.MensWear);
+          setProducts(res.data.MensWear);
+        })
+        .catch((err) => console.log(err));
+    }, []);
+  };
+
+  DataFectch();
+
+  const GetData = (change) => {
+    let changes = "";
+    for (let i = 0; i < change.length; i++) {
+      if (i === 0) {
+        changes += change[i].toUpperCase();
+      } else {
+        changes += change[i];
+      }
+    }
+
+    console.log("change", changes);
+    const data = products.filter((ele) => ele.color.includes(changes));
+    setSearchData(data);
+    console.log("searchData", data);
+  };
+
+  const HandleChange = (event) => {
+    GetData(event.target.value);
+  };
   return (
     <>
       <div className="upper_nav_bar">
@@ -32,6 +71,8 @@ const UpperNavbar = () => {
               id=""
               className="upper_nav_bar_left_serch_bar_inp"
               placeholder="Try Saree,Kurti or Search by Product Code"
+              onClick={() => setClick(!click)}
+              onChange={HandleChange}
             />
           </div>
         </div>
@@ -110,6 +151,44 @@ const UpperNavbar = () => {
       </div>
 
       <hr />
+
+      <hr />
+      {click && (
+        <div className="search_item_nav_bar">
+          <div className="search_item_nav_bar_item">
+            <div className="search_item_nav_bar_item_div">
+              <p className="popular_searches">Popular Searches</p>
+              <div className="search_item_nav_bar_item_div_1">
+                <div className="search_item_nav_bar_item_div_1s">Saree</div>
+                <div className="search_item_nav_bar_item_div_1s">Shoes</div>
+                <div className="search_item_nav_bar_item_div_1s">
+                  Samrt Watch
+                </div>
+                <div className="search_item_nav_bar_item_div_1s">Kurti</div>
+                <div className="search_item_nav_bar_item_div_1s">Watch</div>
+                <div className="search_item_nav_bar_item_div_1s">tShirt</div>
+                <div className="search_item_nav_bar_item_div_1s">
+                  Top Of Women
+                </div>
+                <div className="search_item_nav_bar_item_div_1s">Jacket</div>
+                <div className="search_item_nav_bar_item_div_1s">Lehenga</div>
+              </div>
+              {searchData.length === 0 ? (
+                "No searchitem found"
+              ) : (
+                <div className="search_data_append">
+                  {searchData.map((ele) => (
+                    <div>
+                      <BsSearch color="gray" />
+                      <p>{ele.brand.substr(0, 40) + "..."}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

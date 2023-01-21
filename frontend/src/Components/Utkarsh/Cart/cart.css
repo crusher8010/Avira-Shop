@@ -1,0 +1,120 @@
+#cart-main {
+  padding: 50px 14vw;
+  display: grid;
+  grid-template-columns: 7fr 4fr;
+  gap: 2.5vw;
+}
+
+#cart-main h1 {
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+#cart-main h1 + h2 {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 19px;
+}
+#cart-line {
+  font-weight: 100;
+  color: rgb(187, 187, 187);
+  display: inline-block;
+  transform: scaleY(1.5);
+  margin-right: 7px;
+}
+#cart-main h2 #total-items {
+  color: rgb(55, 55, 55);
+  font-weight: bold;
+}
+#cart-main section > div {
+  box-shadow: 1px 1px 6px 1px #e4e4e4;
+  padding: 20px 15px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-radius: 3px;
+}
+#cart-main div img {
+  float: left;
+  height: 120px;
+  margin-right: 18px;
+  margin-bottom: 40px;
+  width: 100px;
+}
+#cart-main div h3 + p {
+  font-size: 11px;
+  margin: 9px 0;
+  color: green;
+}
+#cart-main div h4 {
+  font-weight: 500;
+  font-size: 15px;
+}
+#cart-main div h5 {
+  margin: 8px 0;
+  font-weight: 100;
+  font-size: 12px;
+}
+#cart-main div h5 span {
+  font-weight: 900;
+  font-size: 22px;
+  color: #f43397;
+  margin-right: 2px;
+}
+#cart-main h5 + p {
+  font-size: 12px;
+  margin: 6px 0 12px;
+  color: rgb(1, 41, 68);
+}
+#cart-main div div {
+  display: flex;
+  align-items: center;
+  float: left;
+}
+#cart-main div div button {
+  padding: 0 10px;
+  margin: 0 9px;
+  background-color: #fff;
+  color: #000000;
+  font-size: 20px;
+  border: 1px solid #010001;
+}
+#cart-main div + button {
+  color: #f43397;
+  background-color: #ffffff;
+  border: 1px solid #f43397;
+  padding: 4px 18px;
+  margin-left: 15px;
+}
+#cart-main section:nth-of-type(2) {
+  padding-top: 10px;
+}
+#cart-main #promocode-para {
+  color: #ff0000;
+  font-size: 13px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+#coupen-code {
+  width: 53%;
+  margin-top: 5px;
+  padding: 2px;
+}
+#payment-details p {
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+#payment-details p:nth-of-type(1) {
+  font-weight: 500;
+}
+#payment-details p span {
+  float: right;
+}
+#payment-details button {
+  background-color: #f43397;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-weight: 500;
+}
