@@ -5,13 +5,14 @@ import Homepage from "./Components/Sudev/WholeHomepage/Homepage/Homepage"
 import LowerNavbar from "./Components/Sudev/WholeNavbar/LowerNavbar/LowerNavbar";
 import Navbar from "./Components/Sudev/WholeNavbar/MainNavbar/Navbar";
 import UpperNavbar from "./Components/Sudev/WholeNavbar/UpperNavbar/UpperNavbar";
+import AllRoutes from "./Pages/AllRoutes";
 function App() {
   return (
     <>
       {/* <Navbar /> */}
-      {/* <Kids/> */}
-      {/* <Western/> */}
-      
+      {/* <Kids /> */}
+      <AllRoutes />
+
     </>
   );
 }
