@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./western.css";
 import axios from "axios";
-import {Menu, Box, MenuButton, MenuList, MenuItem, Button } from "@chakra-ui/react"
-import {RiArrowDropDownLine } from "react-icons/ri"
-import {RiArrowDropUpLine } from "react-icons/ri";
-import {useDispatch } from "react-redux";
-import {CiSearch } from "react-icons/ci";
+import {  useToast, Menu, Box, MenuButton, MenuList, MenuItem, Button } from "@chakra-ui/react"
+import { RiArrowDropDownLine } from "react-icons/ri"
+import { RiArrowDropUpLine } from "react-icons/ri";
+import { useSelector, useDispatch } from "react-redux";
+import { CiSearch } from "react-icons/ci";
 import {
   getBeverageRequest,
   getBeverageSuccess,
@@ -19,23 +19,23 @@ import Pagination from "./Pagination/pagination";
 //ALL SORTING FUNCTIONALITY ARE HERE API CALL ARE HERE
 const sortDataByAsc = () => {
   return axios.get(
-    "https://shy-puce-cod-hose.cyclic.app/mens?sort=price"
+    "https://shy-puce-cod-hose.cyclic.app/kids?sort=price"
   );
 };
 
 const sortDataByDesc = () => {
   return axios.get(
-    "https://shy-puce-cod-hose.cyclic.app/mens?sort=-price"
+    "https://shy-puce-cod-hose.cyclic.app/kids?sort=-price"
   );
 };
 
-const filterByCategory = (param) => {
-  return axios.get(
-    `https://shy-puce-cod-hose.cyclic.app/mens?category=${param}`
-  );
-};
+// const filterByCategory = (param) => {
+//   return axios.get(
+//     `https://shy-puce-cod-hose.cyclic.app/mens?category=${param}`
+//   );
+// };
 // ALL FUNCTIONALITY ARE API CALL ENDED
-const Western = () => {
+const Kids = () => {
   const [menu, setMenu] = useState("Relevance");
   const [show, setShow] = useState(false);
   const [category, setCategory] = useState(false);
@@ -117,7 +117,7 @@ const Western = () => {
   // FUNCTION TO GET THE DATA
   const loderData = async () => {
     return await axios
-      .get("https://shy-puce-cod-hose.cyclic.app/mens")
+      .get("https://shy-puce-cod-hose.cyclic.app/kids")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err))
   }
@@ -128,7 +128,7 @@ const Western = () => {
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    return await axios.get(`https://shy-puce-cod-hose.cyclic.app/mens?brand=${value}`)
+    return await axios.get(`https://shy-puce-cod-hose.cyclic.app/kids?brand=${value}`)
       .then((res) => {
         setData(res.data)
         setValue("")
@@ -151,7 +151,7 @@ const Western = () => {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   console.log(data, "After Sorting");
-  const currentPosts = data.data.MensWear.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = data.data.KidsWear.slice(indexOfFirstPost, indexOfLastPost);
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
 
@@ -159,15 +159,15 @@ const Western = () => {
 // FILTER BY COLOR
 const filterbycolor=async(clr)=>{
  await loderData()
- const store= data.data.MensWear.filter((el)=>{
+ const store= data.data.KidsWear.filter((el)=>{
     return (
       el.color.toLowerCase()== clr
     )
 
   })
- let temp={data:{MensWear:store}}
+ let temp={data:{KidsWear:store}}
  setData(temp)
- console.log(temp.data.MensWear)
+ console.log(temp.data.KidsWear)
 }
 
 
@@ -686,7 +686,7 @@ const filterbycolor=async(clr)=>{
         <div>
           <Pagination
             postsPerPage={postsPerPage}
-            totalPosts={data.data.MensWear.length}
+            totalPosts={data.data.KidsWear.length}
             paginate={paginate}
           />
         </div>
@@ -697,4 +697,4 @@ const filterbycolor=async(clr)=>{
 };
 
 
-export default Western
+export default Kids

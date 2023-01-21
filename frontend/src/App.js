@@ -1,3 +1,4 @@
+import Kids from "./Components/Ankita/kids";
 import Western from "./Components/Ankita/western";
 import Footer from "./Components/Sudev/WholeFooter/Footer/Footer";
 import Homepage from "./Components/Sudev/WholeHomepage/Homepage/Homepage"
@@ -8,7 +9,7 @@ function App() {
   return (
     <>
       {/* <Navbar /> */}
-      <Homepage/>
+      <Kids/>
       {/* <Western/> */}
       
     </>
