@@ -462,7 +462,8 @@ const ProductHomePage = () => {
                 )}
               </div>
             </div>
-          </div>
+          </div> 
+          {/* sidebar */}
           <div className="productHomePage_product_side">
             {loading === true ? (
               <div className="productHomePage_product_side_loading">
