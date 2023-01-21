@@ -7,9 +7,11 @@ export const Globalcontext=createContext()
 
 const Globalcontextprovider = ({children}) => {
     const [userdetails,setuserdetails]=useState({})
-    const [token,settoken]=useState("sdfdasffdgdbfgggsfdafs")
+    const [token,settoken]=useState("")
+    const [logout,setlogout]=useState(false)
 
-    const value={userdetails,setuserdetails,token,settoken}
+
+    const value={userdetails,setuserdetails,token,settoken,logout,setlogout}
 
   return (
     <Globalcontext.Provider value={value}>
