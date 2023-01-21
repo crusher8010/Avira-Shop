@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import AdminNavbar from "./AdminNavbar"
-import { Table, Thead, Tbody, Tr, Th, Td, TableContainer, Heading } from '@chakra-ui/react'
+import AdminNavbar from "./AdminNavbar";
+import { Heading } from '@chakra-ui/react';
 
 function PurchaseHistory() {
     const [data, setData] = useState([]);
@@ -23,32 +23,18 @@ function PurchaseHistory() {
     return (
         <>
             <AdminNavbar />
-            <div>
-                <Heading ml={5} mt={8}>Purchase History Of This Month</Heading>
-                <TableContainer mt={8}>
-                    <Table variant='simple'>
-                        <Thead>
-                            <Tr>
-                                <Th>User ID</Th>
-                                <Th>Name</Th>
-                                <Th>Mobile Number</Th>
-                                <Th>Total Purchase</Th>
-                            </Tr>
-                        </Thead>
-                        <Tbody>
-                            {data.map((item) => {
-                                return (
-                                    <Tr key={item._id}>
-                                        <Td>{item.userId}</Td>
-                                        <Td>{item.name}</Td>
-                                        <Td>{item.mobile}</Td>
-                                        <Td>{item.totalPurchase}</Td>
-                                    </Tr>
-                                )
-                            })}
-                        </Tbody>
-                    </Table>
-                </TableContainer>
+            <Heading mt={5} mb={2} ml={6} color={"#cc2293"}>Purchase History Of This Month</Heading>
+            <div className="purchaseContainer">
+                {data.map((item) => {
+                    return (
+                        <div className="purchaseBox">
+                            <h1><b style={{ color: "#cc2293" }}>Object Id:</b> {item.userId}</h1>
+                            <h2><b style={{ color: "#cc2293" }}>Customer Name:</b> {item.name}</h2>
+                            <h2><b style={{ color: "#cc2293" }}>Mobile Number:</b> {item.mobile}</h2>
+                            <h2><b style={{ color: "#cc2293" }}>Total Purchase:</b> {item.totalPurchase}</h2>
+                        </div>
+                    )
+                })}
             </div>
         </>
     )

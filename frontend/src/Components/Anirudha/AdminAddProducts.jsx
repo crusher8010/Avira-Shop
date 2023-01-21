@@ -120,7 +120,7 @@ function AdminAddProducts() {
     return (
         <>
             <AdminNavbar />
-            <Heading mt={"20px"} textAlign={"center"}>All Crude Operations</Heading>
+            <Heading color={"#cc2293"} mt={"20px"} textAlign={"center"}>All Crude Operations</Heading>
             <div className='formContainer'>
                 <div>
                     <label htmlFor="url">Image Url</label>

@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Login from "../Components/Manoj/Login";
@@ -6,13 +5,6 @@ import Signup from "../Components/Manoj/Signup";
 import AdminAddProducts from "../Components/Anirudha/AdminAddProducts";
 import AdminDashboard from "../Components/Anirudha/AdminDashboard";
 import Homepage from "../Components/Sudev/WholeHomepage/Homepage/Homepage";
-
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Login from '../Components/Manoj/Login'
-import Signup from '../Components/Manoj/Signup'
-import AdminAddProducts from '../Components/Anirudha/AdminAddProducts';
-import AdminDashboard from '../Components/Anirudha/AdminDashboard';
 import PurchaseHistory from '../Components/Anirudha/PurchaseHistory';
 
 
