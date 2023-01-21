@@ -8,6 +8,8 @@ import axios from 'axios';
 import { useToast } from '@chakra-ui/react'
 import {Navigate} from 'react-router-dom'
 import { Link } from 'react-router-dom';
+import { initializeApp } from "firebase/app";
+import {getAuth,GoogleAuthProvider,signInWithPopup} from "firebase/auth"
 
 const initialsate={
     username:"",
@@ -21,7 +23,7 @@ const Login = () => {
     const [tohome,settohome]=useState(false)
     const {token,settoken,userdetails,setuserdetails}=useContext(Globalcontext)
     const toast = useToast()
-
+    console.log(userdetails)
     const handleuser=(e)=>{
         const {name,value}=e.target
         setuser({...user,[name]:value})
@@ -35,7 +37,7 @@ const Login = () => {
             data:user
         })
         .then((res)=>{
-            console.log(res)
+            // console.log(res)
             if(res.data.status==='success'){
                 setuserdetails(res.data.userData)
                 settoken(res.data.token)
@@ -46,7 +48,7 @@ const Login = () => {
                         status:'success',
                         isClosable: true,
                       })
-                    //   settoadmin(true)
+                      settoadmin(true)
                 }else{
                     toast({
                         title: `Login successful`,
@@ -54,7 +56,7 @@ const Login = () => {
                         status:'success',
                         isClosable: true,
                       })
-                    //   settohome(true)
+                      settohome(true)
                 }
             }else{
                 toast({
@@ -74,12 +76,56 @@ const Login = () => {
               })
         })
     }
-    if(toadmin){
 
+    const firebaseConfig = {
+        apiKey: "AIzaSyAlFpCanOp-3Zr2cFn6lAyU8ATq7LdRPpI",
+        authDomain: "auth-78872.firebaseapp.com",
+        projectId: "auth-78872",
+        storageBucket: "auth-78872.appspot.com",
+        messagingSenderId: "805594121279",
+        appId: "1:805594121279:web:00e3ead318c81ea263248a"
+      };
+      
+      
+      const app = initializeApp(firebaseConfig);
+      const auth=getAuth(app)
+      
+      const provider=new GoogleAuthProvider()
+      
+       const signinwithgoogle=()=>{
+          signInWithPopup(auth,provider)
+          .then((res)=>{
+            //   console.log(res._tokenResponse)
+              const userdetailsfromgoogle={
+                username:res._tokenResponse.displayName,
+                email:res._tokenResponse.email
+              }
+              setuserdetails(userdetailsfromgoogle)
+              toast({
+                title: `Login successful`,
+                position: 'top',
+                status:'success',
+                isClosable: true,
+              })
+              settohome(true)
+          })
+          .catch((err)=>{
+              console.log(err)
+              toast({
+                title: 'Some error with logging in with google',
+                position: 'top',
+                status:'error',
+                isClosable: true,
+              })
+          })
+      }
+    
+    if(toadmin){
+      return <Navigate to='/adminDashboard' />
     }
-    // if(tohome){
-    //     return <Navigate to='/' />
-    // }
+    if(tohome){
+        return <Navigate to='/' />
+    }
 
     const {username,password}=user
   return (
@@ -93,7 +139,8 @@ const Login = () => {
                     <i onClick={()=>setpass(!pass)}>{pass?<RiEyeCloseFill/>:<RiEyeFill/>}</i>
                 </div>
                 <button className='button' onClick={loginuser}>Login</button>
-                <button className='google'>Login with Google</button>
+                <button className='google' onClick={signinwithgoogle} >Login with Google</button>
+               
                 <p>Dont't have account? <Link to='/signup'><span>Sign Up</span></Link></p>
             </div>
         </div>

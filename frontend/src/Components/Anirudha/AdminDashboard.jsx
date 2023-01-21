@@ -30,7 +30,7 @@ function AdminDashboard() {
                 </div>
             </div>
             <div style={{ marginTop: "10px", padding: "20px" }}>
-                <Heading>Customer Reviews</Heading>
+                <Heading color={"#cc2293"}>Customer Reviews</Heading>
                 <div className="admin-review">
                     <img style={{ width: "80px", height: "80px", borderRadius: "50%" }} src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="" />
                     <div>

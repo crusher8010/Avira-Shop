@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       {/* <Navbar /> */}
-      <Kids/>
+      {/* <Kids/> */}
       {/* <Western/> */}
       
     </>
