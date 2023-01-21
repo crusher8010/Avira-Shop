@@ -21,7 +21,7 @@ const Login = () => {
   const [user, setuser] = useState(initialsate)
   const [toadmin, settoadmin] = useState(false)
   const [tohome, settohome] = useState(false)
-  const { token, settoken, userdetails, setuserdetails } = useContext(Globalcontext)
+  const { settoken, userdetails, setuserdetails, setlogout } = useContext(Globalcontext)
   const toast = useToast()
   console.log(userdetails)
   const handleuser = (e) => {
@@ -39,8 +39,10 @@ const Login = () => {
       .then((res) => {
         // console.log(res)
         if (res.data.status === 'success') {
+          console.log(res)
           setuserdetails(res.data.userData)
           settoken(res.data.token)
+          setlogout(true)
           if (res.data.userData.role === 'admin') {
             toast({
               title: `Admin login successful`,
@@ -123,9 +125,9 @@ const Login = () => {
   if (toadmin) {
     return <Navigate to='/adminDashboard' />
   }
-  if (tohome) {
-    return <Navigate to='/' />
-  }
+  // if(tohome){
+  //     return <Navigate to='/' />
+  // }
 
   const { username, password } = user
   return (
