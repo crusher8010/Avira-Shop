@@ -12,7 +12,6 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <GoogleOAuthProvider clientId="498149673715-9pg1eq4t0on3omu6k5p1rer8e67eukfl.apps.googleusercontent.com">
   <Globalcontextprovider>
   <ChakraProvider>
     <BrowserRouter>
@@ -22,7 +21,6 @@ root.render(
     </BrowserRouter>
   </ChakraProvider>
   </Globalcontextprovider>
-  </GoogleOAuthProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

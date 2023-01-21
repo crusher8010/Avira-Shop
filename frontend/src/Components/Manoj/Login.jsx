@@ -56,7 +56,7 @@ const Login = () => {
                         status:'success',
                         isClosable: true,
                       })
-                    //   settohome(true)
+                      // settohome(true)
                 }
             }else{
                 toast({
@@ -107,7 +107,7 @@ const Login = () => {
                 status:'success',
                 isClosable: true,
               })
-            //   settohome(true)
+              // settohome(true)
           })
           .catch((err)=>{
               console.log(err)
