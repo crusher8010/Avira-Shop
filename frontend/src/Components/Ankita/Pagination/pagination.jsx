@@ -11,9 +11,9 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
   return (
     <>
         <Center>
-      <Flex className='pagination' gap={5} mt={10}>
+      <Flex className='pagination' gap={3} mt={12}>
         {pageNumbers.map(number => (
-          <Button  bgColor={"rgb(244, 51, 151)"} color={"white"} key={number} onClick={() => paginate(number)} 
+          <Button  bgColor={"rgb(244, 51, 151)"} bcolor={"white"} key={number} borderRadius={"50%"} color={"white"} onClick={() => paginate(number)} 
           >
          
              {number}

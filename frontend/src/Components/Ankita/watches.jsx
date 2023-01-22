@@ -151,7 +151,7 @@ const Watches = () => {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   console.log(data, "After Sorting");
-  const currentPosts = data.data.MensWear.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = data.data.Watches.slice(indexOfFirstPost, indexOfLastPost);
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
 
@@ -159,15 +159,15 @@ const Watches = () => {
 // FILTER BY COLOR
 const filterbycolor=async(clr)=>{
  await loderData()
- const store= data.data.MensWear.filter((el)=>{
+ const store= data.data.Watches.filter((el)=>{
     return (
       el.color.toLowerCase()== clr
     )
 
   })
- let temp={data:{MensWear:store}}
+ let temp={data:{Watches:store}}
  setData(temp)
- console.log(temp.data.MensWear)
+ console.log(temp.data.Watches)
 }
 
 
@@ -181,7 +181,7 @@ const filterbycolor=async(clr)=>{
       <div className="productHomePage" style={{ width: "92%" }}>
         <div style={{ display: "flex", gap: "20px" }}>
           <div className="productHomePage_sidebar_h1" style={{ width: "30%" }} >
-            <h1 id="topic">Mens T-shirts</h1>
+            <h1 id="topic">Womens's Watches</h1>
             <h3 style={{ fontSize: "18px", color: "rgb(244, 51, 151)" }}>Showing 1-20 out of 1000 products</h3>
           </div>
           <form style={{
@@ -679,14 +679,15 @@ const filterbycolor=async(clr)=>{
 
           <Post
             data={currentPosts}
-            loading={loading} />
+            loading={loading}
+            singlepage="productwatches" />
 
         </div>
         {/* data call */}
         <div>
           <Pagination
             postsPerPage={postsPerPage}
-            totalPosts={data.data.MensWear.length}
+            totalPosts={data.data.Watches.length}
             paginate={paginate}
           />
         </div>

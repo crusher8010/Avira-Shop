@@ -1,6 +1,12 @@
+import { toCSSVar } from "@chakra-ui/react"
 import { HiStar } from "react-icons/hi"
+import {useNavigate} from "react-router-dom"
+
 import "./western.css"
-const Post=({data,loading})=>{
+const Post=({data,loading,singlepage})=>{
+
+  const navigate = useNavigate()
+
     console.log(data)
     if(loading){
         return <h2>LOADING...</h2>
@@ -18,17 +24,18 @@ const Post=({data,loading})=>{
         data &&
           data.map((ele,index) => (
             <div className="products_div">
+              
               <img src={ele.url} alt="" />
-              <div className="all_details_products">
+              <div  className="all_details_products">
                 {ele.brand.length > 20 ? (
                   <p className="all_details_products_para">
                     {ele.brand.substr(0, 20) + "..."}
                   </p>
                 ) : (
-                  <p className="all_details_products_para">{ele.brand}</p>
+                  <p onClick={()=>navigate (`/${singlepage}/${ele["_id"]}`)} className="all_details_products_para">{ele.brand}</p>
                 )}
                 <div className="price_product">
-                  <p className="all_details_products_price">
+                  <p  className="all_details_products_price">
                     $ {ele.price}
                   </p>
                   <p>onwards</p>
