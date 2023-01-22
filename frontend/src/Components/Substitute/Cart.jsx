@@ -27,6 +27,7 @@ function Cart() {
     const finalRef = useRef(null);
     const { state, dispatch } = useContext(CartContext);
     const [temp, setTemp] = useState(state);
+    const [address, setAddress] = useState("")
     const [len, setLen] = useState(state.length);
     let total = 0;
     const { userdetails } = useContext(Globalcontext);
@@ -73,6 +74,7 @@ function Cart() {
             name: userdetails.username,
             mobile: userdetails.mobile_no,
             totalPurchase: total,
+            address
         };
 
         fetch("https://shy-puce-cod-hose.cyclic.app/cart", {
@@ -213,6 +215,14 @@ function Cart() {
                                             placeholder="Total Purchase"
                                             value={total}
                                             disabled={true}
+                                        />
+                                    </FormControl>
+                                    <FormControl mt={4}>
+                                        <FormLabel>Address</FormLabel>
+                                        <Input
+                                            placeholder="User Address"
+                                            value={address}
+                                            onChange={(e) => setAddress(e.target.value)}
                                         />
                                     </FormControl>
                                 </ModalBody>
