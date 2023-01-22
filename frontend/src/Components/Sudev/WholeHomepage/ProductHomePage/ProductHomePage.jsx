@@ -40,7 +40,7 @@ const ProductHomePage = () => {
 
   return (
     <>
-      <div className="productHomePage">
+      <div className="productHomePages">
         <div className="productHomePage_sidebar_h1">
           <h1>Products For You</h1>
         </div>

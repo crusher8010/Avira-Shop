@@ -1,8 +1,8 @@
-.productHomePage {
-  width: 85%;
+.productHomePages {
+  width:70%;
   margin: auto;
   height: auto;
-  /* border: 1px solid red; */
+  border: 1px solid red;
   margin-top: 30px;
 }
 
@@ -63,6 +63,7 @@
   align-items: center;
   /* justify-content: center; */
 }
+
 .iconinc {
   width: 10%;
   /* border: 1px solid red; */
@@ -250,6 +251,7 @@
   font-weight: 600;
   font-size: 13px;
 }
+
 .price_product {
   display: flex;
   margin-top: 10px;
