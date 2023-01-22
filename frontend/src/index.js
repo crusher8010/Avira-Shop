@@ -8,17 +8,20 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import Globalcontextprovider from './Context/Context';
 import { store } from './Components/Ankita/Redux/store';
+import CartContextProvider from './Context/CartContext/CartContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Globalcontextprovider>
-    <ChakraProvider>
-      <BrowserRouter>
-        <Provider store={store}>
-          <App />
-        </Provider>
-      </BrowserRouter>
-    </ChakraProvider>
+    <CartContextProvider>
+      <ChakraProvider>
+        <BrowserRouter>
+          <Provider store={store}>
+            <App />
+          </Provider>
+        </BrowserRouter>
+      </ChakraProvider>
+    </CartContextProvider>
   </Globalcontextprovider>
 );
 
