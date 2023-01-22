@@ -228,10 +228,18 @@ label {
     .purchaseContainer {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .sampleContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media screen and (max-width: 800px) {
     .purchaseContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sampleContainer {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -239,5 +247,23 @@ label {
 @media screen and (max-width: 550px) {
     .purchaseContainer {
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .sampleContainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .formContainer {
+        flex-direction: column;
+    }
+
+    .formbutton {
+        display: block;
+        margin: auto;
+        margin-top: 15px;
+    }
+
+    label {
+        margin-top: 12px;
     }
 }
