@@ -1,0 +1,137 @@
+.cart_container {
+    width: 60%;
+    height: auto;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.cart_container_left {
+    width: 55%;
+}
+
+.cart_container_left h3 {
+    margin-bottom: 7px;
+}
+
+.cart_container_left_main {
+    width: 100%;
+    height: auto;
+    border: 1px solid lightgray;
+    display: flex;
+    /* justify-content: space-around; */
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.cart_image {
+    width: 80px;
+    height: 80px;
+    /* border: 1px solid gray; */
+}
+
+.cart_image img {
+    width: 100%;
+    height: 100%;
+    margin-top: 3px;
+}
+
+.cart_rest h3 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.quantity {
+    width: 80px;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-around;
+    font-size: 11px;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+.quantity p {
+    font-size: 12px;
+}
+
+.cart_rest h4 {
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.remove_btn {
+    display: flex;
+    width: 100%;
+    /* border: 1px solid red; */
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.remove_btn button {
+    color: #cc2293;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.remove_btn p {
+    font-size: 14px;
+    font-weight: 600;
+    color: gray;
+}
+
+.cart_container_right {
+    width: 45%;
+    height: auto;
+    /* border: 1px solid red; */
+}
+
+.total_price {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    /* border: 1px solid red; */
+}
+
+.order_total {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.continue {
+    width: 100%;
+}
+
+.continue1 {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    background-color: lightgray;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.continue2 {
+    width: 100%;
+    height: 45px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    background-color: #cc2293;
+    margin-top: 15px;
+    font-weight: bold;
+}

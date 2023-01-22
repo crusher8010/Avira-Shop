@@ -7,6 +7,7 @@ import AdminDashboard from "../Components/Anirudha/AdminDashboard";
 import Homepage from "../Components/Sudev/WholeHomepage/Homepage/Homepage";
 import PurchaseHistory from "../Components/Anirudha/PurchaseHistory";
 import PrivateRoutes from "../Context/Privateroute";
+import Cart from "../Components/Substitute/Cart";
 
 
 const AllRoutes = () => {
@@ -40,6 +41,7 @@ const AllRoutes = () => {
             </PrivateRoutes>
           }
         ></Route>
+        <Route path="/cart" element={<PrivateRoutes><Cart /></PrivateRoutes>}></Route>
 
         {/* vjdvjvjvj */}
       </Routes>
