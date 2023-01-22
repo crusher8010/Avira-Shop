@@ -34,7 +34,7 @@ To deploy this project run
   npm run deploy
 ```
 Deployed link:
-https://frontend-crusher8010.vercel.app/
+https://frontend-two-sepia-41.vercel.app
 
 
 ## Tech Stack
