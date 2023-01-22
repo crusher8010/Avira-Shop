@@ -29,9 +29,6 @@ function App() {
       <AllRoutes />
       {/* <Navbar /> */}
 
-      {/* <Kids /> */}
-      <AllRoutes />
-
 
     </>
   );
