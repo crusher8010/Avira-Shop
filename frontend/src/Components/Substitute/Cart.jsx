@@ -19,6 +19,7 @@ import { removeFromCart, checkout } from "../../Context/CartContext/action";
 import { useContext, useRef, useState } from "react";
 import Uppernavbar from "../Sudev/WholeNavbar/UpperNavbar/UpperNavbar";
 import LowerNavbar from "../Sudev/WholeNavbar/LowerNavbar/LowerNavbar";
+import { Navigate } from "react-router-dom";
 // import axios from "axios";
 
 function Cart() {
@@ -29,6 +30,7 @@ function Cart() {
     const [len, setLen] = useState(state.length);
     let total = 0;
     const { userdetails } = useContext(Globalcontext);
+    const [stat, setStat] = useState(false)
 
     const handledelete = (id) => {
         dispatch(removeFromCart(id));
@@ -62,13 +64,14 @@ function Cart() {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [overlay, setOverlay] = useState(<OverlayOne />);
 
+    console.log(userdetails)
+
     const HandleSave = (total) => {
-        dispatch(checkout());
 
         let obj = {
-            userId: userdetails.userId,
+            userId: userdetails._id,
             name: userdetails.username,
-            mobile: userdetails.mobile,
+            mobile: userdetails.mobile_no,
             totalPurchase: total,
         };
 
@@ -81,8 +84,19 @@ function Cart() {
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
 
+        setTemp([]);
+        dispatch(checkout());
+        setLen(0);
         onClose();
+
+        setStat(true)
     };
+
+    if (stat) {
+        return <Navigate to="/" />
+    }
+
+    console.log(temp);
 
     return (
         <>
@@ -93,7 +107,7 @@ function Cart() {
                     <h3>Cart : {len} Items</h3>
                     <hr />
 
-                    {temp.length >= 0
+                    {temp.length > 0
                         ? temp.map((ele) => {
                             total += Number(ele.qty) * Number(ele.price);
                             return (
@@ -125,7 +139,17 @@ function Cart() {
                                 </div>
                             );
                         })
-                        : "kbkbkb"}
+                        : (
+                            <div style={{ marginTop: "16px" }}>
+                                <div style={{ width: "40%", margin: "auto" }}>
+                                    <img
+                                        style={{ width: "100%", margin: "auto" }}
+                                        src="https://i.pinimg.com/736x/2e/ac/fa/2eacfa305d7715bdcd86bb4956209038--android.jpg"
+                                        alt=""
+                                    />
+                                </div>
+                            </div>
+                        )}
                 </div>
                 <div className="cart_container_right">
                     <h2>Price Details</h2>
@@ -167,7 +191,7 @@ function Cart() {
                                         <FormLabel>User Id</FormLabel>
                                         <Input
                                             ref={initialRef}
-                                            value={userdetails.userId}
+                                            value={userdetails._id}
                                             disabled={true}
                                         />
                                     </FormControl>
@@ -181,12 +205,12 @@ function Cart() {
                                     </FormControl>
                                     <FormControl mt={4}>
                                         <FormLabel>User Mobile Number</FormLabel>
-                                        <Input placeholder="User name" value={userdetails.mobile} />
+                                        <Input placeholder="User Mobile Number" value={userdetails.mobile_no} />
                                     </FormControl>
                                     <FormControl mt={4}>
-                                        <FormLabel>Total Purches</FormLabel>
+                                        <FormLabel>Total Purchase</FormLabel>
                                         <Input
-                                            placeholder="User name"
+                                            placeholder="Total Purchase"
                                             value={total}
                                             disabled={true}
                                         />

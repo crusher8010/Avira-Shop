@@ -1,10 +1,12 @@
-.singlemain{
-    height:"auto"
+.singlemain {
+    height: "auto"
 }
-.outborder{
-    margin:auto;
+
+.outborder {
+    margin: auto;
     margin-top: 10px;
 }
-.intborder{
-   margin-left:200px
+
+.intborder {
+    margin-left: 200px
 }

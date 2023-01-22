@@ -9,6 +9,7 @@ import {
   MenuGroup,
   // useDisclosure,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const LowerNavbar = () => {
   const [womenEthinic, setWomenEthinic] = useState(false);
@@ -50,7 +51,7 @@ const LowerNavbar = () => {
 
                 <MenuGroup title="Sarees" color="#da60b0" bgColor="">
                   <MenuItem fontSize={12} marginLeft={1} color="grey">
-                    All Sarees
+                    <Link to="/productsaree">All Sarees</Link>
                   </MenuItem>
                   <MenuItem fontSize={12} marginLeft={1} color="grey">
                     Silk Sarees
@@ -152,7 +153,7 @@ const LowerNavbar = () => {
               onMouseEnter={() => setWomenWester(true)}
               onMouseLeave={() => setWomenWester(false)}
             >
-              <p className="lower_nav_bar_divs_para">Women Wester</p>
+              <p className="lower_nav_bar_divs_para">Women Western</p>
             </MenuButton>
             <MenuList marginTop="4px">
               <div
@@ -162,7 +163,7 @@ const LowerNavbar = () => {
               >
                 <MenuGroup title="Topwear" color="#da60b0">
                   <MenuItem fontSize={13} marginLeft={1} color="grey">
-                    Tops
+                    <Link to="/producttops">Tops</Link>
                   </MenuItem>
                   <MenuItem fontSize={13} marginLeft={1} color="grey">
                     Dresses
@@ -233,7 +234,7 @@ const LowerNavbar = () => {
               >
                 <MenuGroup title="Top Wear" color="#da60b0">
                   <MenuItem fontSize={13} marginLeft={1} color="grey">
-                    All Top Wear
+                    <Link to="/productindividual">All Top Wear</Link>
                   </MenuItem>
                   <MenuItem fontSize={13} marginLeft={1} color="grey">
                     tshirts
@@ -342,7 +343,7 @@ const LowerNavbar = () => {
               >
                 <MenuGroup title="Boys & Girls 2+ Year" color="#da60b0">
                   <MenuItem fontSize={13} marginLeft={1} color="grey">
-                    Dresses
+                    <Link to="/productkids">Dresses</Link>
                   </MenuItem>
                 </MenuGroup>
                 <MenuDivider />
@@ -543,7 +544,7 @@ const LowerNavbar = () => {
                     Bags
                   </MenuItem>
                   <MenuItem fontSize={13} marginLeft={1} color="grey">
-                    Watches
+                    <Link to="/productwatches">Watches</Link>
                   </MenuItem>
                   <MenuItem fontSize={13} marginLeft={1} color="grey">
                     Hair Accessories

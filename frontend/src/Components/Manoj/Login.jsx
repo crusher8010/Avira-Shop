@@ -23,7 +23,7 @@ const Login = () => {
   const [tohome, settohome] = useState(false)
   const { settoken, userdetails, setuserdetails, setlogout } = useContext(Globalcontext)
   const toast = useToast()
-  console.log(userdetails)
+  // console.log(userdetails)
   const handleuser = (e) => {
     const { name, value } = e.target
     setuser({ ...user, [name]: value })

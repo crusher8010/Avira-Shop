@@ -52,7 +52,7 @@ const UpperNavbar = () => {
     }
 
     console.log("change", changes);
-    const data = products.filter((ele) => ele.color.includes(changes));
+    const data = products.filter((ele) => ele.brand.includes(changes));
     setSearchData(data);
     console.log("searchData", data);
   };
@@ -66,7 +66,7 @@ const UpperNavbar = () => {
         <div className="upper_nav_bar_left">
           {/* Logo */}
           <div className="upper_nav_bar_left_logo">
-            <img src={logo} alt="" className="upper_nav_bar_left_logo_img" />
+            <Link to="/"><img src={logo} alt="" className="upper_nav_bar_left_logo_img" /></Link>
           </div>
           {/* Search Bar */}
           <div className="upper_nav_bar_left_serch_bar">
@@ -164,7 +164,7 @@ const UpperNavbar = () => {
           </div>
           <div className="nav_bar_ver_bar"></div>
           <div className="upper_nav_bar_right_cart">
-            <AiOutlineShoppingCart />
+            <Link to="/cart"><AiOutlineShoppingCart /></Link>
             <h3 className="nav-bar-h3-tag">Cart</h3>
           </div>
         </div>
@@ -200,7 +200,7 @@ const UpperNavbar = () => {
                   {searchData.map((ele) => (
                     <div>
                       <BsSearch color="gray" />
-                      <p>{ele.brand.substr(0, 40) + "..."}</p>
+                      <Link to={`/productindividual/${ele._id}`}><p>{ele.brand.substr(0, 40) + "..."}</p></Link>
                     </div>
                   ))}
                 </div>
