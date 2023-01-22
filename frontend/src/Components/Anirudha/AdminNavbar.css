@@ -1,16 +1,24 @@
 .graphContainer {
     width: 96%;
-    margin-top: 35px;
-}
-
-.barchartHeading {
-    text-align: center;
-    font-size: 1.3rem;
-    font-weight: 700;
+    margin-top: 20px;
 }
 
 .overviewHeading {
     margin-left: 20px;
+    color: #cc2293
+}
+
+.purchaseContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding: 20px;
+}
+
+.purchaseBox {
+    border: 1px solid #cc2293;
+    padding: 10px;
+    border-radius: 12px;
 }
 
 .overview {
@@ -145,6 +153,7 @@
     border: 1px solid #cc2293;
     padding: 20px;
     border-radius: 20px;
+    margin-top: 10px;
 }
 
 label {
@@ -183,6 +192,10 @@ label {
     border-radius: 5px;
 }
 
+.products_two {
+    display: flex;
+}
+
 @media screen and (max-width: 800px) {
     .barchartHeading {
         font-size: 1.1rem;
@@ -212,5 +225,49 @@ label {
 @media screen and (max-width: 400px) {
     .barchartHeading {
         font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .purchaseContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .sampleContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .purchaseContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sampleContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .purchaseContainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .sampleContainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .formContainer {
+        flex-direction: column;
+    }
+
+    .formbutton {
+        display: block;
+        margin: auto;
+        margin-top: 15px;
+    }
+
+    label {
+        margin-top: 12px;
     }
 }

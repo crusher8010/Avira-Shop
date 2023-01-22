@@ -19,6 +19,7 @@
 .lower_nav_bar_divs_para {
   font-size: 12px;
   font-weight: 600;
+  color: #c76993;
   /* color: red; */
 }
 
@@ -31,7 +32,6 @@
 }
 
 @media screen and (max-width: 330px) {
-
   .lower_nav_bar_divs {
     display: flex;
     width: 100%;

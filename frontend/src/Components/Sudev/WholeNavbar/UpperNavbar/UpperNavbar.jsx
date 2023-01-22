@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./UpperNavbar.css";
 import logo from "..//..//..//..//assets/logo.png";
 import { BsSearch } from "react-icons/bs";
@@ -6,6 +6,8 @@ import { MdPhoneAndroid } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { BsBagCheck } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { Globalcontext } from "../../../../Context/Context";
+
 import {
   Menu,
   MenuButton,
@@ -13,10 +15,14 @@ import {
   MenuItem,
   MenuOptionGroup,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const UpperNavbar = () => {
   const [click, setClick] = useState(false);
   const [products, setProducts] = useState("");
+  const { logout, userdetails } = useContext(Globalcontext);
+
+  console.log("logOut", logout);
 
   // const [change, setChange] = useState("");
   const [searchData, setSearchData] = useState("");
@@ -121,7 +127,13 @@ const UpperNavbar = () => {
               <MenuList>
                 {/* MenuItems are not rendered unless Menu is open */}
                 <MenuOptionGroup>
-                  <p className="upper_nav_bar_right_big_para">Hello Users</p>
+                  {logout ? (
+                    <p className="upper_nav_bar_right_big_para">
+                      Hello {userdetails.username}
+                    </p>
+                  ) : (
+                    <p className="upper_nav_bar_right_big_para">Hello Users</p>
+                  )}
                 </MenuOptionGroup>
                 <MenuOptionGroup>
                   <p className="upper_nav_bar_right_small_para">
@@ -129,7 +141,15 @@ const UpperNavbar = () => {
                   </p>
                 </MenuOptionGroup>
                 <MenuOptionGroup>
-                  <button className="upper_nav_bar_right_btn">Sign Up</button>
+                  {logout === true ? (
+                    <button className="upper_nav_bar_right_btn">Log Out</button>
+                  ) : (
+                    <Link to="/login">
+                      <button className="upper_nav_bar_right_btn">
+                        Log In
+                      </button>
+                    </Link>
+                  )}
                 </MenuOptionGroup>
                 <hr className="nav_bar_hr" />
 

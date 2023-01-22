@@ -1,7 +1,8 @@
 import { Input, Heading, Button } from '@chakra-ui/react';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import AdminNavbar from './AdminNavbar'
 import "./AdminNavbar.css";
+import { Globalcontext } from "../../Context/Context";
 
 function AdminAddProducts() {
     const [url, setUrl] = useState("")
@@ -11,7 +12,7 @@ function AdminAddProducts() {
     const [price, setPrice] = useState(0)
     const [change, setChange] = useState(false);
     const [data, setData] = useState([]);
-    const temp = localStorage.getItem('token');
+    const { token } = useContext(Globalcontext)
 
     const fetchdata = () => {
         fetch('https://shy-puce-cod-hose.cyclic.app/sample', {
@@ -39,7 +40,7 @@ function AdminAddProducts() {
             method: "POST",
             body: JSON.stringify(obj),
             headers: {
-                "Authorization": `${temp}`,
+                "Authorization": `${token}`,
                 'Content-type': 'application/json',
             }
         }).then(res => res.json())
@@ -79,7 +80,7 @@ function AdminAddProducts() {
             method: "PATCH",
             body: JSON.stringify(obj),
             headers: {
-                "Authorization": `${temp}`,
+                "Authorization": `${token}`,
                 'Content-type': 'application/json',
             }
         }).then(res => res.json())
@@ -100,7 +101,7 @@ function AdminAddProducts() {
         fetch(`https://shy-puce-cod-hose.cyclic.app/sample/${id}`, {
             method: "DELETE",
             headers: {
-                "Authorization": `${temp}`,
+                "Authorization": `${token}`,
                 'Content-type': 'application/json',
             }
         }).then(res => res.json())
@@ -120,21 +121,21 @@ function AdminAddProducts() {
     return (
         <>
             <AdminNavbar />
-            <Heading mt={"20px"} textAlign={"center"}>All Crude Operations</Heading>
+            <Heading color={"#cc2293"} mt={"20px"} textAlign={"center"}>All Crude Operations</Heading>
             <div className='formContainer'>
                 <div>
                     <label htmlFor="url">Image Url</label>
-                    <Input borderRadius={"12px"} type="text" name="url" value={url} onChange={(e) => setUrl(e.target.value)} />
+                    <Input mt={2} borderRadius={"12px"} type="text" name="url" value={url} onChange={(e) => setUrl(e.target.value)} />
                     <label htmlFor="brand">Brand</label>
-                    <Input borderRadius={"12px"} type="text" name="brand" value={brand} onChange={(e) => setBrand(e.target.value)} />
+                    <Input mt={2} borderRadius={"12px"} type="text" name="brand" value={brand} onChange={(e) => setBrand(e.target.value)} />
                     <label htmlFor="price">Price</label>
-                    <Input borderRadius={"12px"} type="number" name="price" value={price} onChange={(e) => setPrice(e.target.value)} />
+                    <Input mt={2} borderRadius={"12px"} type="number" name="price" value={price} onChange={(e) => setPrice(e.target.value)} />
                 </div>
                 <div>
                     <label htmlFor="rating">Rating</label>
-                    <Input borderRadius={"12px"} type="number" name="rating" value={rat} onChange={(e) => setRat(e.target.value)} />
+                    <Input mt={2} borderRadius={"12px"} type="number" name="rating" value={rat} onChange={(e) => setRat(e.target.value)} />
                     <label htmlFor="color">Color</label>
-                    <Input borderRadius={"12px"} type="text" name="color" value={color} onChange={(e) => setColor(e.target.value)} />
+                    <Input mt={2} borderRadius={"12px"} type="text" name="color" value={color} onChange={(e) => setColor(e.target.value)} />
                     {change === true ? <button className='formbutton' type="submit" onClick={(e) => handlePatch(e)}>Update</button> : <button className='formbutton' type="submit" onClick={(e) => handleSubmit(e)}>Submit</button>}
                 </div>
             </div>
@@ -143,9 +144,14 @@ function AdminAddProducts() {
                     return (
                         <div className='eachgrid' key={item._id}>
                             <img src={item.url} alt="" />
-                            <h3>Brand: {item.brand}</h3>
-                            <h4>Price: Rs.{item.price}</h4>
-                            <div style={{ display: "flex", justifyContent: "space-around" }}>
+                            <div style={{ padding: "10px" }}>
+                                <h3>Brand: {item.brand}</h3>
+                            </div>
+                            <div style={{ display: "flex", justifyContent: "space-between", padding: "10px" }}>
+                                <h4>Price: Rs.{item.price}</h4>
+                                <h3>Rating: {item.rating}</h3>
+                            </div>
+                            <div style={{ display: "flex", justifyContent: "space-around", marginTop: "5px", marginBottom: "10px" }}>
                                 <Button onClick={() => handleUpdate(item)}>Update</Button>
                                 <Button onClick={() => handleDelete(item._id)}>Delete</Button>
                             </div>

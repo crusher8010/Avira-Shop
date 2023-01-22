@@ -45,19 +45,19 @@ const Post=({data,loading,singlepage})=>{
                   <p>Free Delivery</p>
                 </div>
 
-                <div className="rating_products">
-                  <div className="rating_green">
-                    <div className="rating_star">
-                      {ele.rating}
-                      <HiStar className="x" />
-                    </div>
+              <div className="rating_products">
+                <div className="rating_green">
+                  <div className="rating_star">
+                    {ele.rating}
+                    <HiStar className="x" />
                   </div>
                 </div>
               </div>
             </div>
-          ))
-        )}
-      </div>
-    )
+          </div>
+        ))
+      )}
+    </div>
+  )
 }
 export default Post
