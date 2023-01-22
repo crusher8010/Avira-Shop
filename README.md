@@ -1,21 +1,30 @@
+
 # Avira Shop
 
 This is a collaborative project made by 5 members within 5 days.
 Here you can get variety of products like clothing, electronics, furniture etc.
+ 
+
 
 ## Screenshots
 
-![App Screenshot]
-<img src="https://photos.google.com/photo/AF1QipORwYOQmNHfc9Z_OAz6ewRUl0U5JvPwPA4bMG3Y" alt="Homepage" />
-()
-![Product Page Screenshot]
-(https://photos.google.com/photo/AF1QipM7SqDjb0W_boL__4w4Tplkrr4mgoa3f-S2NKJJ)
-![Login Page Screenshot]
-(https://photos.google.com/photo/AF1QipPf1YFxQg5QWuqJVrBi0h-hxNXnuK6PdCSVleCN)
-![Cart Page Screenshot]
-(https://photos.google.com/photo/AF1QipNi3z4HtL8TQZKsoD3g8VYBTbDgaayazGLGqSje)
-![Admin Dashboard Screenshot]
-(https://photos.google.com/photo/AF1QipNqEy2CLlMFvgzlrkwa8OHTdaA5gQXlCszjk9oW)
+Home Page
+![Home Page Screenshot](https://github.com/crusher8010/damaged-muscle-4612/blob/main/frontend/src/assets/Screenshot%20(116).png?raw=true)
+
+Product Page
+![Product Page Screenshot](https://github.com/crusher8010/damaged-muscle-4612/blob/main/frontend/src/assets/Screenshot%20(117).png?raw=true)
+
+Login Page
+![Login Page Screenshot](https://github.com/crusher8010/damaged-muscle-4612/blob/main/frontend/src/assets/Screenshot%20(118).png?raw=true)
+
+Admin Page
+![Admin Page Screenshot](https://github.com/crusher8010/damaged-muscle-4612/blob/main/frontend/src/assets/Screenshot%20(119).png?raw=true)
+
+Cart Page
+![Cart Screenshot](https://github.com/crusher8010/damaged-muscle-4612/blob/main/frontend/src/assets/Screenshot%20(120).png?raw=true)
+
+
+
 
 ## Deployment
 
@@ -24,57 +33,16 @@ To deploy this project run
 ```bash
   npm run deploy
 ```
-
 Deployed link:
 https://frontend-crusher8010.vercel.app/
 
-## Demo
 
-Demo Link: https://photos.google.com/search/_tra_/photo/AF1QipOhSyW82K6BrB8UF2Eh6AYobcQ47puf7F2wKJLz
+## Tech Stack
 
-## API Reference
+**Client:** React, Redux, Javacript, Chakra-UI, Redux-Thunk
 
-#### Get all items
+**Server:** Node, Express, MongoDB, Firebase
 
-```http
-  GET /api/items
-```
-
-| Parameter | Type     | Description                                  |
-| :-------- | :------- | :------------------------------------------- |
-| `api_key` | `string` | https://shy-puce-cod-hose.cyclic.app/kids    |
-| `api_key` | `string` | https://shy-puce-cod-hose.cyclic.app/watches |
-| `api_key` | `string` | https://shy-puce-cod-hose.cyclic.app/mens    |
-
-```http
-  POST /api/items
-```
-
-| Parameter | Type     | Description                                  |
-| :-------- | :------- | :------------------------------------------- |
-| `api_key` | `string` | https://shy-puce-cod-hose.cyclic.app/kids    |
-| `api_key` | `string` | https://shy-puce-cod-hose.cyclic.app/watches |
-| `api_key` | `string` | https://shy-puce-cod-hose.cyclic.app/mens    |
-
-```http
-  PATCH /api/items/:id
-```
-
-| Parameter | Type     | Description                                      |
-| :-------- | :------- | :----------------------------------------------- |
-| `api_key` | `string` | https://shy-puce-cod-hose.cyclic.app/kids/:id    |
-| `api_key` | `string` | https://shy-puce-cod-hose.cyclic.app/watches/:id |
-| `api_key` | `string` | https://shy-puce-cod-hose.cyclic.app/mens/:id    |
-
-```http
-  DELETE /api/items/:id
-```
-
-| Parameter | Type     | Description                                      |
-| :-------- | :------- | :----------------------------------------------- |
-| `api_key` | `string` | https://shy-puce-cod-hose.cyclic.app/kids/:id    |
-| `api_key` | `string` | https://shy-puce-cod-hose.cyclic.app/watches/:id |
-| `api_key` | `string` | https://shy-puce-cod-hose.cyclic.app/mens/:id    |
 
 ## Features
 
@@ -84,6 +52,8 @@ Demo Link: https://photos.google.com/search/_tra_/photo/AF1QipOhSyW82K6BrB8UF2Eh
 - POST, PATCH and DELETE crud operations can be done by admin side.
 - Authenticate Login and Signup with backend.
 
+
+
 ## Authors
 
 - Anirudha Mandal (https://github.com/crusher8010)
@@ -91,3 +61,4 @@ Demo Link: https://photos.google.com/search/_tra_/photo/AF1QipOhSyW82K6BrB8UF2Eh
 - Ankita Deb (https://github.com/anki2001ta)
 - Manoj Mogal (https://github.com/manojmogal007)
 - Utkarsh Jain (https://github.com/utkarshj212)
+
