@@ -451,10 +451,39 @@
   
   #topic{
     margin: 0px;
-    font-family: -apple-system, "Helvetica Neue", sans-serif, "Mier Book";
+    font-family:-apple-system, "Helvetica Neue", sans-serif, "Mier Book";
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 0.5px;
     line-height: 1.5;
     text-align: left;
+  }
+  #input{
+    width: 420px;
+     height:38px;
+     border: 2px solid black;
+      color: #cc2293;
+       border-radius: 5px;
+       text-indent: 10px;
+  }
+
+
+  /* MEDIA QUERY */
+  @media all and (max-width:727px) and (min-width:375px){
+    .productHomePage{
+      width:92%
+    }
+    .productHomeinput{
+      width:600px
+    }
+    .productHomePage_sidebar_h1{
+      width:30%
+    }
+    .productHomePage_sidebar_h1>h1,.productHomePage_sidebar_h1>h3{
+        font-size: 7px;
+    }
+    #input{
+      width: "60px";
+      height: "28px"
+    }
   }

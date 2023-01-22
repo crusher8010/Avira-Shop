@@ -170,8 +170,6 @@ const filterbycolor=async(clr)=>{
  console.log(temp.data.KidsWear)
 }
 
-
-
   return (
     <>
       <div>
@@ -179,13 +177,13 @@ const filterbycolor=async(clr)=>{
         <LowerNavbar />
       </div>
       <div className="productHomePage" style={{ width: "92%" }}>
-        <div style={{ display: "flex", gap: "20px" }}>
-          <div className="productHomePage_sidebar_h1" style={{ width: "30%" }} >
-            <h1 id="topic">Mens T-shirts</h1>
+        <div className="productHomeinput" style={{ display: "flex", gap: "20px"}}>
+          <div className="productHomePage_sidebar_h1" style={{ width: "30%"}} >
+            <h1 id="topic">KIDS WEAR</h1>
             <h3 style={{ fontSize: "18px", color: "rgb(244, 51, 151)" }}>Showing 1-20 out of 1000 products</h3>
           </div>
           <form style={{
-            // margin:"auto",
+  
             padding: "15px",
             Width: "60%",
             alignContent: "center",
@@ -194,8 +192,8 @@ const filterbycolor=async(clr)=>{
             className="d-flex input-group w-auto"
             onSubmit={handleSearch}
           >
-            <input
-              style={{ width: "420px", height: "38px", border: "2px solid black", color: "#cc2293", borderRadius: "5px", textIndent: "10px" }}
+            <input id="input"
+             
               type="text"
               className="form-content"
               placeholder=" Avira Products..."
@@ -679,7 +677,8 @@ const filterbycolor=async(clr)=>{
 
           <Post
             data={currentPosts}
-            loading={loading} />
+            loading={loading} 
+            singlepage="productkids"/>
 
         </div>
         {/* data call */}

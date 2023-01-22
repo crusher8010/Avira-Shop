@@ -178,7 +178,7 @@ const filterbycolor=async(clr)=>{
         <UpperNavbar />
         <LowerNavbar />
       </div>
-      <div className="productHomePage" style={{ width: "92%" }}>
+      <div className="productHomePage" style={{ width: "92%"}}>
         <div style={{ display: "flex", gap: "20px" }}>
           <div className="productHomePage_sidebar_h1" style={{ width: "30%" }} >
             <h1 id="topic">Mens T-shirts</h1>
@@ -679,7 +679,8 @@ const filterbycolor=async(clr)=>{
 
           <Post
             data={currentPosts}
-            loading={loading} />
+            loading={loading}
+            singlepage="productindividual" />
 
         </div>
         {/* data call */}
