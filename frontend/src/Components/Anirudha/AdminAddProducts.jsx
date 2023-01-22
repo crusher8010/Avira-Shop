@@ -1,7 +1,8 @@
 import { Input, Heading, Button } from '@chakra-ui/react';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import AdminNavbar from './AdminNavbar'
 import "./AdminNavbar.css";
+import { Globalcontext } from "../../Context/Context";
 
 function AdminAddProducts() {
     const [url, setUrl] = useState("")
@@ -11,7 +12,7 @@ function AdminAddProducts() {
     const [price, setPrice] = useState(0)
     const [change, setChange] = useState(false);
     const [data, setData] = useState([]);
-    const temp = localStorage.getItem('token');
+    const { token } = useContext(Globalcontext)
 
     const fetchdata = () => {
         fetch('https://shy-puce-cod-hose.cyclic.app/sample', {
@@ -39,7 +40,7 @@ function AdminAddProducts() {
             method: "POST",
             body: JSON.stringify(obj),
             headers: {
-                "Authorization": `${temp}`,
+                "Authorization": `${token}`,
                 'Content-type': 'application/json',
             }
         }).then(res => res.json())
@@ -79,7 +80,7 @@ function AdminAddProducts() {
             method: "PATCH",
             body: JSON.stringify(obj),
             headers: {
-                "Authorization": `${temp}`,
+                "Authorization": `${token}`,
                 'Content-type': 'application/json',
             }
         }).then(res => res.json())
@@ -100,7 +101,7 @@ function AdminAddProducts() {
         fetch(`https://shy-puce-cod-hose.cyclic.app/sample/${id}`, {
             method: "DELETE",
             headers: {
-                "Authorization": `${temp}`,
+                "Authorization": `${token}`,
                 'Content-type': 'application/json',
             }
         }).then(res => res.json())
@@ -143,9 +144,14 @@ function AdminAddProducts() {
                     return (
                         <div className='eachgrid' key={item._id}>
                             <img src={item.url} alt="" />
-                            <h3>Brand: {item.brand}</h3>
-                            <h4>Price: Rs.{item.price}</h4>
-                            <div style={{ display: "flex", justifyContent: "space-around" }}>
+                            <div style={{ padding: "10px" }}>
+                                <h3>Brand: {item.brand}</h3>
+                            </div>
+                            <div style={{ display: "flex", justifyContent: "space-between", padding: "10px" }}>
+                                <h4>Price: Rs.{item.price}</h4>
+                                <h3>Rating: {item.rating}</h3>
+                            </div>
+                            <div style={{ display: "flex", justifyContent: "space-around", marginTop: "5px", marginBottom: "10px" }}>
                                 <Button onClick={() => handleUpdate(item)}>Update</Button>
                                 <Button onClick={() => handleDelete(item._id)}>Delete</Button>
                             </div>

@@ -192,6 +192,10 @@ label {
     border-radius: 5px;
 }
 
+.products_two {
+    display: flex;
+}
+
 @media screen and (max-width: 800px) {
     .barchartHeading {
         font-size: 1.1rem;

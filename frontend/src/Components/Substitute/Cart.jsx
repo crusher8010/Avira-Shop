@@ -31,33 +31,10 @@ function Cart() {
 
     };
 
-
-
-    const handlecheckout = () => {
-        axios.post("http://localhost:5000/AdminData", {
-            name: name,
-            address: address,
-            quantity: len,
-            total: total,
-        });
-        setTemp([]);
-        dispatch(checkout());
-        setLen(0);
-        toast({
-            position: "top",
-            title: "Checkout Successful.",
-            description: "Thank You for your Purchase.",
-            status: "success",
-            duration: 3000,
-            isClosable: true,
-        });
-
-    };
-
     return (
-        <div>
-
-        </div>
+        <>
+            <div className="main_cart_div"></div>
+        </>
     )
 }
 
