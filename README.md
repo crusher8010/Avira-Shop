@@ -6,7 +6,8 @@ Here you can get variety of products like clothing, electronics, furniture etc.
 ## Screenshots
 
 ![App Screenshot]
-(https://photos.google.com/photo/AF1QipORwYOQmNHfc9Z_OAz6ewRUl0U5JvPwPA4bMG3Y)
+<img src="https://photos.google.com/photo/AF1QipORwYOQmNHfc9Z_OAz6ewRUl0U5JvPwPA4bMG3Y" alt="Homepage" />
+()
 ![Product Page Screenshot]
 (https://photos.google.com/photo/AF1QipM7SqDjb0W_boL__4w4Tplkrr4mgoa3f-S2NKJJ)
 ![Login Page Screenshot]
