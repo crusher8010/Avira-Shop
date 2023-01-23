@@ -9,7 +9,7 @@ Here you can get variety of products like clothing, electronics, furniture etc.
 ## Screenshots
 
 ## Home Page
-![Home Page Screenshot](https://github.com/crusher8010/damaged-muscle-4612/blob/main/frontend/src/assets/Screenshot%20(116).png?raw=true)
+![Home Page Screenshot](https://github.com/crusher8010/damaged-muscle-4612/blob/main/frontend/src/assets/Screenshot%20(116).png)
 
 ## Product Page
 ![Product Page Screenshot](https://github.com/crusher8010/damaged-muscle-4612/blob/main/frontend/src/assets/Screenshot%20(117).png?raw=true)
