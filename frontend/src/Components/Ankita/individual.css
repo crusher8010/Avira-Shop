@@ -10,3 +10,20 @@
 .intborder {
     margin-left: 200px
 }
+.individual_1{
+    display:flex;
+    gap:10px
+}
+@media all and (max-width:768px) and (min-width:275px){
+    .individual_1{
+     display: grid;
+    grid-template-columns: 1fr;
+    }  
+ .centertg{
+   margin-right: 400px;
+ }
+ #photo{
+    width:400px;
+    height:200px
+ }
+}

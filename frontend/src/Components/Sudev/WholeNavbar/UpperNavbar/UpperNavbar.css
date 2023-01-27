@@ -288,3 +288,9 @@
     color: black;
   }
 }
+@media all and (max-width:768px) and (min-width:275px){
+  .upper_nav_bar{
+    width:98%;
+   
+  }
+}

@@ -12,7 +12,7 @@ const Post = ({ data, loading, singlepage }) => {
     return <h2>LOADING...</h2>
   }
   return (
-    <div className="productHomePage_product_side" >
+    <div className="productHomePagelist" >
       {data.length === 0 ? (
         <div className="productHomePage_product_side_loading">
           <img id="gif"
@@ -23,7 +23,7 @@ const Post = ({ data, loading, singlepage }) => {
       ) : (
         data &&
         data.map((ele, index) => (
-          <div className="products_div" onClick={() => navigate(`/${singlepage}/${ele["_id"]}`)}>
+          <div className="products_div2" onClick={() => navigate(`/${singlepage}/${ele["_id"]}`)}>
 
             <img src={ele.url} alt="" />
             <div className="all_details_products">

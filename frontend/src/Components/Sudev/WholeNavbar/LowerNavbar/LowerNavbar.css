@@ -47,3 +47,9 @@
     /* color: red; */
   }
 }
+@media all and (max-width:768px) and (min-width:275px){
+  .lower_nav_bar{
+    width:98%;
+    display: none;
+  }
+}

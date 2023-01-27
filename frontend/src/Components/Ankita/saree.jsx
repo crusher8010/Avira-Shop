@@ -178,11 +178,11 @@ const filterbycolor=async(clr)=>{
         <UpperNavbar />
         <LowerNavbar />
       </div>
-      <div className="productHomePage" style={{ width: "92%" }}>
-        <div style={{ display: "flex", gap: "20px" }}>
-          <div className="productHomePage_sidebar_h1" style={{ width: "30%" }} >
+      <div className="productHomePage2" >
+        <div  className="cover">
+          <div className="productHomePage_sidebar_h12" >
             <h1 id="topic">WESTERN ETHENICS AND SAREES</h1>
-            <h3 style={{ fontSize: "18px", color: "rgb(244, 51, 151)" }}>Showing 1-20 out of 1000 products</h3>
+            <h3 >Showing 1-20 out of 1000 products</h3>
           </div>
           <form style={{
             // margin:"auto",
@@ -191,23 +191,22 @@ const filterbycolor=async(clr)=>{
             alignContent: "center",
 
           }}
-            className="d-flex input-group w-auto"
+            className="d-flex"
             onSubmit={handleSearch}
           >
             <input
-              style={{ width: "420px", height: "38px", border: "2px solid black", color: "#cc2293", borderRadius: "5px", textIndent: "10px" }}
               type="text"
               className="form-content"
               placeholder=" Avira Products..."
               value={value}
               onChange={(e) => setValue(e.target.value)} />
-            <Button type="submit" color="white" backgroundColor="rgb(244, 51, 151)" marginRight="4PX" marginLeft="4px">Search</Button>
-            <Button className="mx-2" color="white" backgroundColor="rgb(244, 51, 151)" onClick={() => handleReset()}>Reset</Button>
+            <Button id="mx-2m"  type="submit" color="white" backgroundColor="rgb(244, 51, 151)" marginRight="4PX" marginLeft="4px">Search</Button>
+            <Button id="mx-2" color="white" backgroundColor="rgb(244, 51, 151)" onClick={() => handleReset()}>Reset</Button>
 
           </form>
         </div>
-        <div className="side_product_divs">
-          <div className="productHomePage_sidebar" style={{ width: "20%" }}>
+        <div className="side_product_divs2">
+          <div className="productHomePage_sidebar2">
             <div className="product_Sort_by" onClick={() => setShow(!show)}>
               <Box w={"100%"}>
                 <Menu isOpen={show}>

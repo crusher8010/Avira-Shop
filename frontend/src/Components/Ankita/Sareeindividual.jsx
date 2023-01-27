@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useEffect, useContext } from 'react'
 import { useParams } from 'react-router'
-import "./single.css"
+import "./individual.css"
 import {
   Box,
   Image,
@@ -13,8 +13,6 @@ import {
 } from "@chakra-ui/react";
 
 import { CartContext } from "../../Context/CartContext/CartContext";
-import { addToCart } from "../../Context/CartContext/action";
-import { StarIcon } from "@chakra-ui/icons";
 import UpperNavbar from '../Sudev/WholeNavbar/UpperNavbar/UpperNavbar'
 import LowerNavbar from '../Sudev/WholeNavbar/LowerNavbar/LowerNavbar'
 
@@ -82,9 +80,9 @@ export const Sareeindividual = () => {
         h={"auto"}
       >
 
-        <Box m={"auto"} mt={10} >
-          <Flex gap={10}>
-            <Box ml={"200px"} >
+        <Box m={"auto"} mt={10} border={"1px solid red"} >
+          <Box className='individual_1' gap={10}>
+            <Box className='centertg' ml={"200px"} >
               {filterdata && <Image id="photo" w={"450px"} h={"400px"} alt='Error' src={filterdata.url} />}
             </Box>
             <Box w={"30%"} >
@@ -185,9 +183,9 @@ export const Sareeindividual = () => {
               </Box>
             </Box>
 
-          </Flex>
-          <Button style={{ width: "450px", backgroundColor: "#f244b8", height: "40px", color: "white", marginLeft: "190px", borderRadius: "5px", fontSize: "18px" }} disabled={itemalreadyexists(filterdata && filterdata._id, state)}
-            onClick={() => dispatch(addToCart(filterdata))}>ADD TO CART</Button>
+          </Box>
+          {/* <Button style={{ width: "450px", backgroundColor: "#f244b8", height: "40px", color: "white", marginLeft: "190px", borderRadius: "5px", fontSize: "18px" }} disabled={itemalreadyexists(filterdata && filterdata._id, state)}
+            onClick={() => dispatch(addToCart(filterdata))}>ADD TO CART</Button> */}
         </Box>
       </Box>
     </Box>
