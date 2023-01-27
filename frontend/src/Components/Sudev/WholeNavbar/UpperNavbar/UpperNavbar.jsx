@@ -7,7 +7,6 @@ import { CgProfile } from "react-icons/cg";
 import { BsBagCheck } from "react-icons/bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Globalcontext } from "../../../../Context/Context";
-
 import {
   Menu,
   MenuButton,
@@ -15,17 +14,30 @@ import {
   MenuItem,
   MenuOptionGroup,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const UpperNavbar = () => {
   const [click, setClick] = useState(false);
   const [products, setProducts] = useState("");
-  const { logout, userdetails } = useContext(Globalcontext);
+  const { logout, userdetails, setlogout } = useContext(Globalcontext);
+  const [stat, setStat] = useState(false)
+  const navigate = useNavigate();
 
-  console.log("logOut", logout);
+  // console.log("logOut", logout);
 
   // const [change, setChange] = useState("");
   const [searchData, setSearchData] = useState("");
+
+  const handleLogout = () => {
+    setlogout(false);
+    setStat(true)
+    navigate("/login")
+  }
+
+  // if (stat) {
+  //   return <Navigate to="/login" />
+  // }
 
   const DataFectch = (chang) => {
     useEffect(() => {
@@ -142,7 +154,7 @@ const UpperNavbar = () => {
                 </MenuOptionGroup>
                 <MenuOptionGroup>
                   {logout === true ? (
-                    <button className="upper_nav_bar_right_btn">Log Out</button>
+                    <button className="upper_nav_bar_right_btn" onClick={() => handleLogout()}>Log Out</button>
                   ) : (
                     <Link to="/login">
                       <button className="upper_nav_bar_right_btn">

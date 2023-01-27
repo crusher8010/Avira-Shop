@@ -32,6 +32,7 @@ function PurchaseHistory() {
                             <h2><b style={{ color: "#cc2293" }}>Customer Name:</b> {item.name}</h2>
                             <h2><b style={{ color: "#cc2293" }}>Mobile Number:</b> {item.mobile}</h2>
                             <h2><b style={{ color: "#cc2293" }}>Total Purchase:</b> {item.totalPurchase}</h2>
+                            <h2><b style={{ color: "#cc2293" }}>Address:</b> {item.address}</h2>
                         </div>
                     )
                 })}

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./western.css";
 import axios from "axios";
-import {Menu, Box, MenuButton, MenuList, MenuItem, Button } from "@chakra-ui/react"
-import {RiArrowDropDownLine } from "react-icons/ri"
-import {RiArrowDropUpLine } from "react-icons/ri";
-import {useDispatch } from "react-redux";
-import {CiSearch } from "react-icons/ci";
+import { Menu, Box, MenuButton, MenuList, MenuItem, Button } from "@chakra-ui/react"
+import { RiArrowDropDownLine } from "react-icons/ri"
+import { RiArrowDropUpLine } from "react-icons/ri";
+import { useDispatch } from "react-redux";
+import { CiSearch } from "react-icons/ci";
 import {
   getBeverageRequest,
   getBeverageSuccess,
@@ -53,7 +53,7 @@ const Saree = () => {
   const [postsPerPage] = useState(16);
   const [data, setData] = useState([])
   const dispatch = useDispatch();
-  
+
   // ALL USE STATE
   //ALL SORTING AND FILTERING API FUNCTIONS
   const handleSortByAsc = () => {
@@ -77,7 +77,7 @@ const Saree = () => {
     });
   };
 
- //DATA COMMENTED FOR CART PAGE
+  //DATA COMMENTED FOR CART PAGE
 
   // const resetFilters = () => {
   //   handleGetData();
@@ -121,7 +121,7 @@ const Saree = () => {
       .then((res) => setData(res.data))
       .catch((err) => console.log(err))
   }
-// FUNCTION TO RESET THE FILTER
+  // FUNCTION TO RESET THE FILTER
   const handleReset = () => {
     loderData()
   }
@@ -156,19 +156,19 @@ const Saree = () => {
 
 
 
-// FILTER BY COLOR
-const filterbycolor=async(clr)=>{
- await loderData()
- const store= data.data.westernEthinic.filter((el)=>{
-    return (
-      el.color.toLowerCase()== clr
-    )
+  // FILTER BY COLOR
+  const filterbycolor = async (clr) => {
+    await loderData()
+    const store = data.data.westernEthinic.filter((el) => {
+      return (
+        el.color.toLowerCase() == clr
+      )
 
-  })
- let temp={data:{westernEthinic:store}}
- setData(temp)
- console.log(temp.data.westernEthinic)
-}
+    })
+    let temp = { data: { westernEthinic: store } }
+    setData(temp)
+    console.log(temp.data.westernEthinic)
+  }
 
 
 
@@ -236,10 +236,10 @@ const filterbycolor=async(clr)=>{
                       </MenuItem>
                       <MenuItem onClick={() => setMenu("Price (High to Low)")}>
                         <p
-                         onClick={() => {
-                          // setList(list.sort((a, b) => b.price - a.price));
-                          handlesortByDesc();
-                        }}>Price (High to Low)</p>
+                          onClick={() => {
+                            // setList(list.sort((a, b) => b.price - a.price));
+                            handlesortByDesc();
+                          }}>Price (High to Low)</p>
                       </MenuItem>
 
                       <MenuItem onClick={() => setMenu("Price (Low to High)")}>
@@ -404,15 +404,15 @@ const filterbycolor=async(clr)=>{
                 </div>
                 {color && (
                   <div className="category_text_product_gender">
-                    <div className="all_gender"onClick={()=>filterbycolor("blue")}>Blue</div>
-                    <div className="all_gender" onClick={()=>filterbycolor("black")}>Black</div>
-                    <div className="all_gender" onClick={()=>filterbycolor("white")}>White</div>
-                    <div className="all_gender" onClick={()=>filterbycolor("red")}>Red</div>
-                    <div className="all_gender" onClick={()=>filterbycolor("silver")}>Silver</div>
-                    <div className="all_gender"onClick={()=>filterbycolor("golden")}>Golden</div>
-                    <div className="all_gender" onClick={()=>filterbycolor("maroon")}>Maroon</div>
-                    <div className="all_gender"onClick={()=>filterbycolor("pink")}>Pink</div>
-                    <div className="all_gender"onClick={()=>filterbycolor("yellow")}>Yellow</div>
+                    <div className="all_gender" onClick={() => filterbycolor("blue")}>Blue</div>
+                    <div className="all_gender" onClick={() => filterbycolor("black")}>Black</div>
+                    <div className="all_gender" onClick={() => filterbycolor("white")}>White</div>
+                    <div className="all_gender" onClick={() => filterbycolor("red")}>Red</div>
+                    <div className="all_gender" onClick={() => filterbycolor("silver")}>Silver</div>
+                    <div className="all_gender" onClick={() => filterbycolor("golden")}>Golden</div>
+                    <div className="all_gender" onClick={() => filterbycolor("maroon")}>Maroon</div>
+                    <div className="all_gender" onClick={() => filterbycolor("pink")}>Pink</div>
+                    <div className="all_gender" onClick={() => filterbycolor("yellow")}>Yellow</div>
                   </div>
                 )}
               </div>
@@ -678,8 +678,8 @@ const filterbycolor=async(clr)=>{
 
           <Post
             data={currentPosts}
-            loading={loading} 
-            singlepage="productsaree"/>
+            loading={loading}
+            singlepage="productsaree" />
 
         </div>
         {/* data call */}
