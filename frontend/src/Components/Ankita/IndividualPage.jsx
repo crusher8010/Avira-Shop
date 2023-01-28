@@ -185,7 +185,7 @@ export const IndividualPage = () => {
             </Box>
 
           </Flex>
-          <button style={{ width: "450px", backgroundColor: "#f244b8", height: "40px", color: "white", marginLeft: "190px", borderRadius: "5px", fontSize: "18px" }} disabled={itemalreadyexists(filterdata && filterdata._id, state)}
+          <button style={{ width: "450px", backgroundColor: "#f244b8", height: "40px", color: "white", marginLeft: "190px", borderRadius: "5px", fontSize: "18px" }} 
             onClick={() => dispatch(addToCart(filterdata))}>ADD TO CART</button>
         </Box>
       </Box>

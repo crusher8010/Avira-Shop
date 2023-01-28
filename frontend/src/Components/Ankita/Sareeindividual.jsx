@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 
 import { CartContext } from "../../Context/CartContext/CartContext";
+import { addToCart } from "../../Context/CartContext/action";
 import UpperNavbar from '../Sudev/WholeNavbar/UpperNavbar/UpperNavbar'
 import LowerNavbar from '../Sudev/WholeNavbar/LowerNavbar/LowerNavbar'
 
@@ -80,7 +81,7 @@ export const Sareeindividual = () => {
         h={"auto"}
       >
 
-        <Box m={"auto"} mt={10} border={"1px solid red"} >
+        <Box m={"auto"} mt={10} >
           <Box className='individual_1' gap={10}>
             <Box className='centertg' ml={"200px"} >
               {filterdata && <Image id="photo" w={"450px"} h={"400px"} alt='Error' src={filterdata.url} />}
@@ -184,11 +185,11 @@ export const Sareeindividual = () => {
             </Box>
 
           </Box>
-          {/* <Button style={{ width: "450px", backgroundColor: "#f244b8", height: "40px", color: "white", marginLeft: "190px", borderRadius: "5px", fontSize: "18px" }} disabled={itemalreadyexists(filterdata && filterdata._id, state)}
-            onClick={() => dispatch(addToCart(filterdata))}>ADD TO CART</Button> */}
-        </Box>
+          <Button style={{ width: "450px", backgroundColor: "#f244b8", height: "40px", color: "white", marginLeft: "190px", borderRadius: "5px", fontSize: "18px" }} disabled={itemalreadyexists(filterdata && filterdata._id, state)}
+          onClick={() => dispatch(addToCart(filterdata))}>ADD TO CART</Button>
       </Box>
     </Box>
+    </Box >
   )
 }
 export default Sareeindividual
