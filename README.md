@@ -53,7 +53,6 @@ https://frontend-two-sepia-41.vercel.app
 - Authenticate Login and Signup with backend.
 
 
-
 ## Authors
 
 - Anirudha Mandal (https://github.com/crusher8010)
@@ -62,3 +61,9 @@ https://frontend-two-sepia-41.vercel.app
 - Manoj Mogal (https://github.com/manojmogal007)
 - Utkarsh Jain (https://github.com/utkarshj212)
 
+## Admin Login Data
+
+- All Accounts
+- { "username": "Anirudha8010", "password": "anirudhamandal8010"}, { "username": "ankitaDeb", "password": "ankitaDeb"}
+- { "username": "sudevKumar", "password": "sudevKumar"}, { "username": "utkarshJain", "password": "utkarshJain"}
+- { "username": "manojMogal", "password": "manojMogal"}
