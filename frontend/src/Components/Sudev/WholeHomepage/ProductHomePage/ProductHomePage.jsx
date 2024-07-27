@@ -24,14 +24,11 @@ const ProductHomePage = () => {
 
   const windowWidth = useRef(window.innerWidth);
 
-  console.log("width: ", windowWidth.current);
-
   useEffect(() => {
     setLoading(true);
-    fetch("https://shy-puce-cod-hose.cyclic.app/mens")
+    fetch("https://nem111-backend-data-2.onrender.com/mens")
       .then((res) => res.json())
       .then((res) => {
-        console.log(res.data.MensWear);
         setProducts(res.data.MensWear);
         setLoading(false);
       })

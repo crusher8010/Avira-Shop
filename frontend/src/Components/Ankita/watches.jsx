@@ -19,19 +19,19 @@ import Pagination from "./Pagination/pagination";
 //ALL SORTING FUNCTIONALITY ARE HERE API CALL ARE HERE
 const sortDataByAsc = () => {
   return axios.get(
-    "https://shy-puce-cod-hose.cyclic.app/watches?sort=price"
+    "https://nem111-backend-data-2.onrender.com/watches?sort=price"
   );
 };
 
 const sortDataByDesc = () => {
   return axios.get(
-    "https://shy-puce-cod-hose.cyclic.app/watches?sort=-price"
+    "https://nem111-backend-data-2.onrender.com/watches?sort=-price"
   );
 };
 
 // const filterByCategory = (param) => {
 //   return axios.get(
-//     `https://shy-puce-cod-hose.cyclic.app/mens?category=${param}`
+//     `https://nem111-backend-data-2.onrender.com/mens?category=${param}`
 //   );
 // };
 // ALL FUNCTIONALITY ARE API CALL ENDED
@@ -117,7 +117,7 @@ const Watches = () => {
   // FUNCTION TO GET THE DATA
   const loderData = async () => {
     return await axios
-      .get("https://shy-puce-cod-hose.cyclic.app/watches")
+      .get("https://nem111-backend-data-2.onrender.com/watches")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err))
   }
@@ -128,7 +128,7 @@ const Watches = () => {
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    return await axios.get(`https://shy-puce-cod-hose.cyclic.app/watches?brand=${value}`)
+    return await axios.get(`https://nem111-backend-data-2.onrender.com/watches?brand=${value}`)
       .then((res) => {
         setData(res.data)
         setValue("")
@@ -150,7 +150,6 @@ const Watches = () => {
   //  pagination
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  console.log(data, "After Sorting");
   const currentPosts = data.data.Watches.slice(indexOfFirstPost, indexOfLastPost);
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
@@ -167,7 +166,6 @@ const filterbycolor=async(clr)=>{
   })
  let temp={data:{Watches:store}}
  setData(temp)
- console.log(temp.data.Watches)
 }
 
 

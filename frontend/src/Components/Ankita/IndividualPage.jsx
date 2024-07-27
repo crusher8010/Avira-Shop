@@ -32,11 +32,10 @@ export const IndividualPage = () => {
   const { id } = useParams()
   const loderData = async () => {
     return await axios
-      .get("https://shy-puce-cod-hose.cyclic.app/mens")
+      .get("https://nem111-backend-data-2.onrender.com/mens")
       .then((res) => setData(res.data.data.MensWear))
       .catch((err) => console.log(err))
   }
-  console.log(data, "individual")
 
 
 
@@ -61,7 +60,6 @@ export const IndividualPage = () => {
     timer()
   }, 1000)
   function timer() {
-    console.log(typeof (filterdata) == "object", filterdata)
     if (typeof (filterdata) == "object") {
       clearInterval(idd)
       return

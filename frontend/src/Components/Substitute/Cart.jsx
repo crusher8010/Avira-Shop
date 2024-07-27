@@ -41,17 +41,14 @@ function Cart() {
         setTemp(dim);
         const te = dim.reduce((a, c) => a + c.qty, 0);
         setLen(te);
-        console.log(len);
     };
 
     const handleQty = (val, id) => {
-        console.log(id);
         setTemp(
             temp.map((item) =>
                 item._id === id ? { ...item, qty: item.qty + val } : item
             )
         );
-        console.log(temp);
         setLen(len + val);
     };
 
@@ -65,8 +62,6 @@ function Cart() {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [overlay, setOverlay] = useState(<OverlayOne />);
 
-    console.log(userdetails)
-
     const HandleSave = (total) => {
 
         let obj = {
@@ -77,7 +72,7 @@ function Cart() {
             address
         };
 
-        fetch("https://shy-puce-cod-hose.cyclic.app/cart", {
+        fetch("https://nem111-backend-data-2.onrender.com/cart", {
             method: "POST",
             body: JSON.stringify(obj),
             headers: { "Content-Type": "application/json" },
@@ -97,8 +92,6 @@ function Cart() {
     if (stat) {
         return <Navigate to="/" />
     }
-
-    console.log(temp);
 
     return (
         <>

@@ -13,7 +13,6 @@ import {
 export const reducer = (store, action) => {
   switch (action.type) {
     case ADD_TO_CART:
-      console.log(store);
       let temp = store.cart;
       if (!temp.includes(+action.payload)) temp.push(+action.payload);
       localStorage.setItem("cart", JSON.stringify(temp));
@@ -37,13 +36,11 @@ export const reducer = (store, action) => {
 
     // =======
     case ADD_NAME:
-      console.log(action);
       return {
         ...store,
         name: action.payload,
       };
     case REMOVE_FROM_CART:
-      console.log(action);
       let newData = { ...store };
       let data = newData.cart.filter((i) => i !== action.payload);
       localStorage.setItem("cart", JSON.stringify(data));

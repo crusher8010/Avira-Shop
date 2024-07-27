@@ -32,11 +32,10 @@ export const WatchesIndividual = () => {
   const { id } = useParams()
   const loderData = async () => {
     return await axios
-      .get("https://shy-puce-cod-hose.cyclic.app/watches")
+      .get("https://nem111-backend-data-2.onrender.com/watches")
       .then((res) => setData(res.data.data.Watches))
       .catch((err) => console.log(err))
   }
-  console.log(data, "individual")
 
 
 

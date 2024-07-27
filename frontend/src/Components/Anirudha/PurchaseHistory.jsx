@@ -6,7 +6,7 @@ function PurchaseHistory() {
     const [data, setData] = useState([]);
 
     const fetchData = () => {
-        fetch('https://shy-puce-cod-hose.cyclic.app/cart', {
+        fetch('https://nem111-backend-data-2.onrender.com/cart', {
             method: "GET",
             headers: {
                 'Content-type': 'application/json'

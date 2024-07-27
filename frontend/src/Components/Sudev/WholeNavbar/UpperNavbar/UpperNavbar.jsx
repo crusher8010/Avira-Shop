@@ -41,10 +41,9 @@ const UpperNavbar = () => {
 
   const DataFectch = (chang) => {
     useEffect(() => {
-      fetch("https://shy-puce-cod-hose.cyclic.app/mens")
+      fetch("https://nem111-backend-data-2.onrender.com/mens")
         .then((res) => res.json())
         .then((res) => {
-          console.log("nmbm", res.data.MensWear);
           setProducts(res.data.MensWear);
         })
         .catch((err) => console.log(err));
@@ -63,10 +62,8 @@ const UpperNavbar = () => {
       }
     }
 
-    console.log("change", changes);
     const data = products.filter((ele) => ele.brand.includes(changes));
     setSearchData(data);
-    console.log("searchData", data);
   };
 
   const HandleChange = (event) => {

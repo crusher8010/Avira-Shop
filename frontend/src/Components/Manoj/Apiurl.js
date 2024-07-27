@@ -1,1 +1,1 @@
-export const apiurl='https://shy-puce-cod-hose.cyclic.app'
+export const apiurl='https://nem111-backend-data-2.onrender.com'

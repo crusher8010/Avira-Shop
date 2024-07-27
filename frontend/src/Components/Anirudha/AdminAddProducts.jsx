@@ -15,7 +15,7 @@ function AdminAddProducts() {
     const { token } = useContext(Globalcontext)
 
     const fetchdata = () => {
-        fetch('https://shy-puce-cod-hose.cyclic.app/sample', {
+        fetch('https://nem111-backend-data-2.onrender.com/sample', {
             method: "GET",
             headers: {
                 'Content-type': 'application/json',
@@ -36,7 +36,7 @@ function AdminAddProducts() {
             url, brand, price, rating: rat, color
         }
 
-        fetch('https://shy-puce-cod-hose.cyclic.app/sample', {
+        fetch('https://nem111-backend-data-2.onrender.com/sample', {
             method: "POST",
             body: JSON.stringify(obj),
             headers: {
@@ -45,7 +45,6 @@ function AdminAddProducts() {
             }
         }).then(res => res.json())
             .then(res => {
-                console.log(res);
                 fetchdata();
             })
             .catch(err => console.log(err))
@@ -76,7 +75,7 @@ function AdminAddProducts() {
 
         const id = localStorage.getItem('updateId');
 
-        fetch(`https://shy-puce-cod-hose.cyclic.app/sample/${id}`, {
+        fetch(`https://nem111-backend-data-2.onrender.com/sample/${id}`, {
             method: "PATCH",
             body: JSON.stringify(obj),
             headers: {
@@ -85,7 +84,6 @@ function AdminAddProducts() {
             }
         }).then(res => res.json())
             .then(res => {
-                console.log(res);
                 fetchdata();
             })
             .catch(err => console.log(err))
@@ -98,7 +96,7 @@ function AdminAddProducts() {
     }
 
     const handleDelete = (id) => {
-        fetch(`https://shy-puce-cod-hose.cyclic.app/sample/${id}`, {
+        fetch(`https://nem111-backend-data-2.onrender.com/sample/${id}`, {
             method: "DELETE",
             headers: {
                 "Authorization": `${token}`,

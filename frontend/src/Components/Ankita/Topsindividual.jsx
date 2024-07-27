@@ -17,7 +17,6 @@ import UpperNavbar from '../Sudev/WholeNavbar/UpperNavbar/UpperNavbar'
 import LowerNavbar from '../Sudev/WholeNavbar/LowerNavbar/LowerNavbar'
 
 const itemalreadyexists = (id, cartitem) => {
-  console.log(id)
   if (cartitem.find((item) => item.id === id)) {
     return true;
   } else {
@@ -32,11 +31,10 @@ export const Topsindividual = () => {
   const { id } = useParams()
   const loderData = async () => {
     return await axios
-      .get("https://shy-puce-cod-hose.cyclic.app/westernTop")
+      .get("https://nem111-backend-data-2.onrender.com/westernTop")
       .then((res) => setData(res.data.data.westernTop))
       .catch((err) => console.log(err))
   }
-  console.log(data, "individual")
 
 
 

@@ -33,11 +33,10 @@ export const Kidsindividual = () => {
   const { id } = useParams()
   const loderData = async () => {
     return await axios
-      .get("https://shy-puce-cod-hose.cyclic.app/kids")
+      .get("https://nem111-backend-data-2.onrender.com/kids")
       .then((res) => setData(res.data.data.KidsWear))
       .catch((err) => console.log(err))
   }
-  console.log(data, "individual")
 
 
 
@@ -62,7 +61,6 @@ export const Kidsindividual = () => {
     timer()
   }, 1000)
   function timer() {
-    console.log(typeof (filterdata) == "object", filterdata)
     if (typeof (filterdata) == "object") {
       clearInterval(idd)
       return

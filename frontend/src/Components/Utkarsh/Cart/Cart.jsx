@@ -50,7 +50,6 @@ export default function Cart() {
     }
 
     setCartData(newData);
-    console.log(newData);
   };
 
   const navigate = useNavigate();

@@ -7,7 +7,6 @@ const Post = ({ data, loading, singlepage }) => {
 
   const navigate = useNavigate()
 
-  console.log(data)
   if (loading) {
     return <h2>LOADING...</h2>
   }

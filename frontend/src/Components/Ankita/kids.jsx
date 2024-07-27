@@ -19,19 +19,19 @@ import Pagination from "./Pagination/pagination";
 //ALL SORTING FUNCTIONALITY ARE HERE API CALL ARE HERE
 const sortDataByAsc = () => {
   return axios.get(
-    "https://shy-puce-cod-hose.cyclic.app/kids?sort=price"
+    "https://nem111-backend-data-2.onrender.com/kids?sort=price"
   );
 };
 
 const sortDataByDesc = () => {
   return axios.get(
-    "https://shy-puce-cod-hose.cyclic.app/kids?sort=-price"
+    "https://nem111-backend-data-2.onrender.com/kids?sort=-price"
   );
 };
 
 // const filterByCategory = (param) => {
 //   return axios.get(
-//     `https://shy-puce-cod-hose.cyclic.app/mens?category=${param}`
+//     `https://nem111-backend-data-2.onrender.com/mens?category=${param}`
 //   );
 // };
 // ALL FUNCTIONALITY ARE API CALL ENDED
@@ -117,7 +117,7 @@ const Kids = () => {
   // FUNCTION TO GET THE DATA
   const loderData = async () => {
     return await axios
-      .get("https://shy-puce-cod-hose.cyclic.app/kids")
+      .get("https://nem111-backend-data-2.onrender.com/kids")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err))
   }
@@ -128,7 +128,7 @@ const Kids = () => {
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    return await axios.get(`https://shy-puce-cod-hose.cyclic.app/kids?brand=${value}`)
+    return await axios.get(`https://nem111-backend-data-2.onrender.com/kids?brand=${value}`)
       .then((res) => {
         setData(res.data)
         setValue("")
@@ -150,7 +150,6 @@ const Kids = () => {
   //  pagination
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  console.log(data, "After Sorting");
   const currentPosts = data.data.KidsWear.slice(indexOfFirstPost, indexOfLastPost);
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
@@ -166,8 +165,7 @@ const filterbycolor=async(clr)=>{
 
   })
  let temp={data:{KidsWear:store}}
- setData(temp)
- console.log(temp.data.KidsWear)
+ setData(temp);
 }
 
   return (
